@@ -18,7 +18,7 @@ Vale lembrar que diferente de outras linguagens como C/C++, condicionais como if
 #####Show me the code!
 
 No código a seguir, você verá que o if como foi dito acima, não é um delimitador, ele não cria um novo escopo.
-```
+```js
   var number = 10;
 
   if (true) {
@@ -29,7 +29,7 @@ No código a seguir, você verá que o if como foi dito acima, não é um delimi
 ```
 
 Utilizamos a function para criar um novo escopo.
-```
+```js
   var number = 10;
 
   function init() {
@@ -51,7 +51,7 @@ Hoisting (em português, levantar) é um procedimento do JavaScript onde as vari
 
 #####Existe dois tipos de hoisting, a Variable hoisting e a Function hoisting. Vamos ver os dois na prática.
 
-```
+```js
   function nota () {
     console.log(ap1);
   }
@@ -60,7 +60,7 @@ Hoisting (em português, levantar) é um procedimento do JavaScript onde as vari
 ```
 O código acima resultaria em erro, lógico, já que a variável ap1 não foi criada.
 
-```
+```js
   function nota () {
     console.log(ap1);
     var ap1 = 10;
@@ -73,7 +73,7 @@ Já esse outro código iria imprimir respectivamente ```undefined```, ```10```. 
 
 Esse foi um exemplo de Variable hoisting, quando as variáveis são elevadas. Mas como você viu o spoiler mais em cima, também existe a Function hoisting. Mas ela funciona um pouco diferente, veja.
 
-```
+```js
   meuTime()
   
   function meuTime () {
@@ -86,7 +86,7 @@ Bom. Você já sabe o que o hoisting faz e já deve imaginar que a função ```m
 Diferente do que aconteceria se fosse trabalhado com variáveis, a chamada da função irá imprimir "Flamengo". Você deve está se perguntar, o por quê disso. A resposta é simples, se tratanto de Function Hoisting não apenas o nome da função é levado para o topo, mas também o seu escopo, todo o seu corpo irá junto.
 
 #####Um outro exemplo...
-```
+```js
   function meuTime () {
 
     function time () {
@@ -106,7 +106,7 @@ Diferente do que aconteceria se fosse trabalhado com variáveis, a chamada da fu
 E agora!? É simples. Irá imprimir ```Brasil```, simplesmente porque a segunda função ```time()``` será elevada ao topo, mas ela fica depois da função ```time()``` já existe, logo era irá sobrescrever a primeira, o resultado você já sabe.
 
 #####E se eu fizesse...
-```
+```js
   meuTime();
 
   function meuTime () { }
@@ -122,7 +122,7 @@ Já que as declarações e as funções são sempre elevadas, é sempre uma boa 
 Clousures nada mais é que uma função filho que tem acesso a variáveis da sua função pai. Clousures, tem acesso as variáveis da função exterior (pai), acesso a variáveis globais e é claro ao seu próprio escopo.
 Para criarmos um Clousure basta criar uma função dentro de outra função e para ter acesso as variáveis do pai não é necessário passar os valores por parâmetro, vocês podem acessá-las diretamente. Veja um exemplo:
 
-```
+```js
 function flash (name) {
   var init = "My name is";
 
@@ -141,7 +141,7 @@ O resultado será ```My name is Thiago. And I am the fastest man alive.```. Simp
 Você pode pensar: A função fastest() não é um novo escopo? Como ela tem acesso a variável de outro escopo?. Vou lhe explicar. Sim fastest é um novo escopo, mas veja, ```init``` pertence ao escopo ```flash``` então tudo o que eu fizer dentro desse escopo é lógico que poderei fazer o uso dessa váriavel e dentro do escopo fastest não foi criado uma variável com o mesmo nome, então ela associa essa variável a váriavel pai.
 
 ####Com código fica mais fácil.
-```
+```js
 function flash (name) {
   var init = "My name is";
 
@@ -174,7 +174,7 @@ Uma variável global está disponível e pode ser usada em toda a aplicação de
 Qualquer variável criada fora de uma função é uma global, podendo ser criada dentro de uma função. Vejamos:
 
 ####Fora da função
-```
+```js
 var flag = true;
 //ou
 flag = "The Flash";
@@ -184,7 +184,7 @@ var flag;
 name;
 ```
 ####Dentro da função
-```
+```js
 function myName () {
   name = "Thiago";
 }
@@ -199,7 +199,7 @@ Sim. Se você prestar atenção, percebeu que a função acima não tinha o ```v
 ## Variáveis por parâmetro
 A passagem de variáveis por parâmetro é uma caracterista da programação funcional, que foi herdada pelo JavaScript. Ela permite passa uma variável ou função para um outro escopo, no caso da variável ela será tratada como local, mesmo que você esteja passando uma variável global. Vamos ao código, assim ficará mais claro.
 
-````
+```js
 function age () {
   var a = 2015;
   function next (p) {
@@ -218,7 +218,7 @@ Entendeu? Não entendeu? Calma que irei explicar. Dentro da nossa função age, 
 Criamos uma função next com um argumento p. Quando chamamos a função next, colocamos entre parênteses uma variável que já existe, no caso foi ```a``` com o valor 2015, essa é a nossa passagem por parâmetro. Com isso a variável ```p``` pertencente a esse escopo recebe o valor 2015 e as mudanças que fizermos nessa variável não afetara a variável ```a```.
 
 ####Hmmm.. E se o argumento tiver o mesmo nome da variável passada?
-```
+```js
 function age () {
   a = 2015;
   function next (a) {
@@ -234,7 +234,7 @@ function age () {
 ####Quando eu irei precisar passar uma variável global por parâmetro?
 Você irá precisar quando for usar o valor da variável global ela irá ou poderá haver modificações durante o processo, mas você quer que essas modificações sejam apenas durante a execução dessa função, mantendo inalterado o valor da variável global no final do processo.
 
-```
+```js
 ano = 2015;
 
 function next (a) {
@@ -253,7 +253,7 @@ Immediately-Invoked Function Expression, vulgo IIFE e como o próprio nome já d
 ####Como criamos esse tipo de função?
 Simples. Geralmente, IFFE ficam dentro de parênteses, dentro dos parênteses é crianda uma função anônima e logo depois é colocado um ```()``` que é responsável por invocar a função.
 
-```
+```js
 (function () {
   console.log('IIFE');
 }());
@@ -262,7 +262,7 @@ Simples. Geralmente, IFFE ficam dentro de parênteses, dentro dos parênteses é
 ####Geralmente? Por que geralmente?
 Geralmente porque existe três formas de criarmos uma IFFE.
 
-```
+```js
 var fun = function () { console.log('oi'); }(); // Funciona
 
 // Funciona e é validado pelo [JSLint] (https://pt.wikipedia.org/wiki/JSLint)
@@ -278,9 +278,9 @@ var fun = function () { console.log('oi'); }(); // Funciona
 
 ##Bibliografia
 
-[Wikipedia] (https://pt.wikipedia.org/wiki/Escopo_%28computa%C3%A7%C3%A3o%29)
-[loopinfinito] (http://loopinfinito.com.br/2014/10/29/hoisting-e-escopo-em-javascript/)
-[hugobessa] (https://www.hugobessa.com.br/posts/entendendo-escopo-e-hoisting-no-javascript/)
-[javascriptbrasil] (http://javascriptbrasil.com/2013/10/12/entenda-closures-no-javascript-com-facilidade/)
-[javascriptbrasil] (http://javascriptbrasil.com/2013/10/11/escopo-de-variavel-e-hoisting-no-javascript-explicado/)
-[tutsmais] (http://tutsmais.com.br/blog/javascript-2/o-que-e-iife-no-javascript/)
+- [Wikipedia] (https://pt.wikipedia.org/wiki/Escopo_%28computa%C3%A7%C3%A3o%29)
+- [loopinfinito] (http://loopinfinito.com.br/2014/10/29/hoisting-e-escopo-em-javascript/)
+- [hugobessa] (https://www.hugobessa.com.br/posts/entendendo-escopo-e-hoisting-no-javascript/)
+- [javascriptbrasil] (http://javascriptbrasil.com/2013/10/12/entenda-closures-no-javascript-com-facilidade/)
+- [javascriptbrasil] (http://javascriptbrasil.com/2013/10/11/escopo-de-variavel-e-hoisting-no-javascript-explicado/)
+- [tutsmais] (http://tutsmais.com.br/blog/javascript-2/o-que-e-iife-no-javascript/)
