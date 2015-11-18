@@ -1,5 +1,5 @@
 # Instanciação de variáveis no Javascript
-Autor: **Mateus Cerezini Gomes**
+Autor: **José Alves de Sousa Neto**
 
 Neste artigo vamos abordar alguns temas importantes sobre a instanciação de variáveis em JavaScript, entre eles: hoisting, closure, variáveis locais e globais, e IIFE.
 
