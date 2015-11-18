@@ -1,5 +1,3 @@
-
-
 # Instanciação com Javascript
 
 
