@@ -160,20 +160,24 @@ function foo() {
   var g = "BeMean"; //var global
   
   function bar() {
-    console.log("bar() -> " + g);
+    console.log("bar() -> " + g);    //Vai exibir: bar() -> BeMean
     
     function baz() {
-      console.log("baz() -> " + g);
+      console.log("baz() -> " + g);  //Vai exibir: baz() -> BeMean
     }
     
     baz();
   }
  
-  console.log(g); 
+  console.log(g); //Vai exibir: BeMean
   bar();
 }
 
 ```
+No exemplo anterior podemos ver que, uma vez que a variável foi criada 
+num escopo pai, qualquer escopo filho pode acessar a variável que ela
+está disponível.
+
 
 #Variável por parâmetro
 Existem 4 maneiras de um nome entrar em um escopo em JavaScript:
