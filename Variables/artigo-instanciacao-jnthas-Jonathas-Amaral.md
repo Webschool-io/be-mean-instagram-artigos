@@ -1,3 +1,6 @@
+# Javascript Escopo/Instâncias - Artigo
+**autor**: Jonathas Amaral
+
 #Hoisting
 
 Hoisting é o nome dado por Ben Cherry para a resolução de nomes e inicialização 
