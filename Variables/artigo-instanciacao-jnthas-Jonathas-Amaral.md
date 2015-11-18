@@ -87,26 +87,91 @@ Fonte: http://loopinfinito.com.br/2014/10/29/hoisting-e-escopo-em-javascript/
 #Closure
 
 Uma closure é uma função interna declarada dentro de outra função, na qual, 
-a função interna tem acesso ao escopo da função externa.
+a função interna tem acesso ao escopo da função externa. Closures podem ser
+usados para ocultar um estado, criar uma fabrica de objetos, 
+para eventos e callbacks.
 
+Exemplo 1 - Ocultando estado de um objeto
 ```
+function Conta(nome, saldo) {
+  var message = "Olá " + nome + ", você tem " + saldo + " em saldo.";
 
-function PokeFactory() {
-    var id = 0;
-    function newPokemon() {
-      return {
-        id: id,
-        name: '',
-        description: '',
-        height: 0
-      };
-    }
+  return function saldoAtual() {
+    console.log(message);
+  };
 }
 
-var pikachu = PokeFactory()();
-
+//O cliente acessa a closure da seguinte maneira:
+var bemean = Conta("BeMean", 500);
+bemean();
 
 ```
+Exemplo 2 - Fabrica de objetos
+```
+var ClienteFactory = function() {
+    var id = 0;
+    var createCliente = function(nome) {
+        id++;
+        return {
+            id: id,
+            nome: nome
+        };
+    };
+    return createCliente;
+};
+
+var factory = ClienteFactory();
+var c1 = factory("Cliente 1");
+var c2 = factory("Cliente 2");
+
+alert(c1.id);    // 1
+alert(c2.id);    // 2
+```
+Exemplo 3 - Usando como closure em eventos e callbacks
+```
+function setAlarm(message, timeout) {
+
+  // Define handle in the closure
+  function handle() {
+    console.log(message);
+  }
+
+  setTimeout(handle, timeout);
+}
+
+setAlarm("Wake UP!", 100);
+```
+
+
+#Variável Global
+
+Uma variável global como o nome já diz, pode ser acessada por qualquer 
+função dentro do mesmo escopo.
+
+```
+function foo() {
+  var g = "BeMean"; //var global
+  
+  function bar() {
+    console.log("bar() -> " + g);
+    
+    function baz() {
+      console.log("baz() -> " + g);
+    }
+    
+    baz();
+  }
+ 
+  console.log(g); 
+  bar();
+}
+
+```
+
+#Variável por parâmetro
+
+
+
 
 
 
