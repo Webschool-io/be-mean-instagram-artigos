@@ -163,7 +163,7 @@ No nosso código acima, passamos um parametro `numero` que vai receber o inteiro
 
 	É como se a função interna falasse: "numero", você não está no meu escopo, mas eu dependo de você pra funcionar corretamente. Então, não se preocupe, eu vou lhe deixar vivo até que eu cumpra minha missão na Terra. E para a função externa: "Não se preocupe, o legado que você deixou comigo está bem guardado e ninguém vai vê-lo a não ser eu." - Javascript Closures - Conceiro e Aplicações Práticas (Johel Carvalho, com adaptações)
 
-## Variavel por parametro
+## Variavel por parâmetro
 
 Quando cria funções no Javascript, você pode passar parametros na sua assinatura:
 
@@ -259,7 +259,12 @@ Uncaught SyntaxError: Unexpected token (
 ```
 
 ## Fontes
+[Escopo de Variável e Hoisting no Javascript Explicado - Javascript Brasil](http://javascriptbrasil.com/2013/10/11/escopo-de-variavel-e-hoisting-no-javascript-explicado/)
+
 [Javascript Closures - Conceito e Aplicações Praticas](http://programadorobjetivo.co/closures/)
+
 [Quando se deve usar var no javascript? - Stack Overflow](http://pt.stackoverflow.com/questions/2513/quando-se-deve-usar-var-no-javascript#answer-93713)
+
 [Property isolate your variables in Javascript](http://nicoespeon.com/en/2013/05/properly-isolate-variables-in-javascript/)
+
 [Modularização em JavaScript - Tableless](http://tableless.com.br/modularizacao-em-javascript/)
