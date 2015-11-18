@@ -97,7 +97,7 @@ function imprimeNome() {
 console.log(global);
 ```
 
-Vamos olhar o código acima com calma. Primeiro criamos a variavel `global`, mas sem atribuir nenhum valor, com isso ele será `undefined`. Depois criamos a função `imprimeNome` em que ele vai:
+Vamos olhar o código acima com calma. Primeiro criamos a variavel `global`, mas sem atribuir nenhum valor, com isso ele será `undefined`. Depois criamos a função `imprimeNome` em que ele vai: 
 
  - Imprimir o valor de `nome`;
  - Atribuir valor a `global`;
