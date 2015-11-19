@@ -1,67 +1,134 @@
 # Artigo
+
 **Autor**: Angelo Rogério Rubin
 
-**Prazo**: até dia 18 de Novembro de 2015
+## Tópicos do Artigo
+* Hoisting
+* Closure 
+* Variáveis Locais e Globais
+* IIFE (Immediately Invoked Function Expression)
 
-Explique, com teoria e código, nesse artigo como o JavaScript cria e instancia as variáveis, seguindo os seguintes tópicos.
+## HOISTING
 
-Explique o que é, o porquê acontece e como acontece com variável e função.
+### O que é Hoisting
 
-# HOISTING
+Hoisting é uma ação do interpretador do javascript com o objetivo de mover as declarações feitas (tanto de variáveis como de funções) para o topo do seu escopo, quer ele seja global ou local.
 
-## O que é Hoisting
+### Hoisting de variáveis
 
-Hoisting é o ato do interpretador do javascript mover as declarações feitas (variáveis ou funções) para o topo do seu escopo (global ou local).
+Quando ocorre o hoisting da variável o comportamento é o seguinte, apenas a declaração da variável é movida até o topo, ela não é inicializada e nada do que é atribuído a ela é movido, somente a sua declaração.
 
-## Hoisting de variáveis
+Exemplo - Hoisting de Variável
 
-No caso do hoisting de variáveis o comportamento é o seguinte, apenas as declarações de variáveis são movidas até o topo, elas não serão inicializadas e nada do que é atribuído a elas é movido (obviamente quando for atribuído algo a variável), somente a sua declaração.
+    console.log(myVar); // undefined
 
-Exemplo de Código - Hoisting de Variável
-
-    console.log(myVar);
-
+    // Variável declarada no escopo global
 	var myVar = 'I am a invisible assign, i hate you hoisting !!!';
 
-	// undefined
+Como podemos observar no código acima, o resultado foi undefined, isso ocorreu porque quando a variável sofreu o hoisting, ela não foi inicializada e nem suas atribuições foram movidas, portanto obtivemos o comportamento esperado através da ação do hoisting.
 
-Como podemos observar no código acima, o console imprimirá undefined, isso ocorre porque quando a variável sofre o hoisting, ela não é inicializada e nem suas atribuições são movidas ao topo do seu escopo, que neste exemplo é um escopo global.
+### Hoisting de funções
 
-## Hoisting de Funções
+No caso das funções, tanto a declaração da função como tudo que esta em seu interior será movido para o topo do seu escopo na execução do hoisting.
 
-No caso das funções
+Exemplo - Hoisting de Função
 
-# Closure
+    console.log(myFunc()); // Hi
 
-Explique o que é, o porquê acontece e como usar. 
-Cite situações que você usaria.
+	// Função declarada no escopo global
+	function myFunc() 
+	{ 
+	 	return 'Hi'; 
+	}
 
-## Variável Global
+Portanto notamos que ao ser executada a função myFunc() que foi declarada posteriormente a sua chamada, (através do hoisting) é elevada ao topo do contexto global onde esta inserida e funciona como esperado.
 
-Explique como se usa uma var Global dentro de uma função.
+## CLOSURES
 
-## Variável por parâmetro
+Um closure é uma função interna que tem acesso a variáveis de uma função externa, conhecido como cadeia de escopo. Um closure possui três cadeias de escopo: 
 
-Explique o que acontece dentro da função qnd um parâmetro é passado e também explique quando uma GLOBAL é passada por parâmetro.
+* Ele tem acesso ao seu próprio escopo (variáveis definidas entre suas chaves);
+* Ele tem acesso as variáveis da função exterior;
+* Ele tem acesso as variáveis globais.
+
+Como no javascript não existe uma forma de se declarar métodos e propriedades privadas ( como no PHP, por exemplo - public/private/protected ), podemos concluir que o intuíto maior das closures é o isolamento de escopo entre o que é local e o que é global.
+
+Exemplo - Closure
+
+	var add = (function () {
+    	var counter = 0;
+    	return function () {return counter += 1;}
+	})();
+
+	console.log(add()); // 1
+	console.log(add()); // 2
+	console.log(add()); // 3
+
+## VARIÁVEIS GLOBAIS
+
+Em um documento web, as variáveis globais pertencem ao objeto da janela o (window object).
+
+As variáveis globais podem ser utilizadas e alteradas por todos os scripts no documento e na janela.
+
+Exemplo - Variável Global
+
+	// Variáveis declaradas no escopo global
+	var a, b, c;
+
+	function x() {
+		// Variáveis declaradas no escopo local da função
+		var a, b, c;
+	}
+
+## VARIÁVEIS POR PARÂMETRO
+
+Ao passar uma variável do tipo primitivo como uma string ou um número, o argumento é passado por valor. Isto significa que quaisquer alterações a essa variável dentro da função é completamente distinta de qualquer coisa que acontece fora da função. Vejamos um exemplo:
+
+	function myfunction(x)
+	{
+      // x é igual a 4
+      x = 5;
+      // x agora é igual a 5
+	}
+
+	var x = 4;
+	alert(x); // x é igual a 4
+	myfunction(x); 
+	alert(x); // x ainda é igual a 4
 
 
-## Instanciação usando uma IIFE
+Porém se passarmos um objeto como argumento a função, este será passado por referência. Neste caso, qualquer propriedade do objeto é acessível dentro da função. Vejamos outro exemplo:
 
-Explique como uma variável pode receber um valor de uma IIFE.
-Explique como passar uma variável por parâmetro para a IIFE e acontece com ela dentro da função.
+	function myobject()
+	{
+		this.value = 5;
+	}
+
+	var o = new myobject();
+	alert(o.value); // o.value = 5
+	
+	function objectchanger(fnc)
+	{
+		fnc.value = 6;
+	}
+
+	objectchanger(o);
+	alert(o.value); // o.value agora é igual a 6
+
+## IIFE (Immediately Invoked Function Expression - Função Anônima Auto Executável)
+
+As IIFE's são funções anônimas, ou seja, sem assinatura (nome), que são executadas no mesmo momento de sua instanciação.
+Abaixo podemos ver a estrutura de uma IIFE:
+
+	(function() {
+  		// o código aqui é executado uma vez em seu próprio escopo
+	})();
 
 
-## Considerações
+# Referências
 
-Quanto mais explicado melhor.
-
-Lembre que isso fará parte do seu currículo como aluno e será disponilizado no sistema de vagas, ou seja, o contratante poderá ver todos seus projetos e trabalhos feitos nesse curso.
-
-Boa sorte.
-
-# Envio
-
-1. Fork [esse repositório](https://github.com/Webschool-io/be-mean-instagram-artigos/) 
-2. Nomeie seu artigo usando o seguinte padrão: artigo-instanciacao-githubuser-nome-completo.md
-3. Adicione seu exercício aqui na Pasta Variables
-4. Faça um Pull Requst enviando seu artigo.
+http://javascriptbrasil.com/2013/10/12/entenda-closures-no-javascript-com-facilidade
+https://en.wikipedia.org/wiki/Closure_(computer_programming)
+https://www.hugobessa.com.br/posts/entendendo-escopo-e-hoisting-no-javascript
+http://benalman.com/news/2010/11/immediately-invoked-function-expression
+http://imasters.com.br/front-end/javascript/sobre-funcoes-imediatas-javascript-iife/
