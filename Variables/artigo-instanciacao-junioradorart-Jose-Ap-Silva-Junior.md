@@ -22,7 +22,7 @@ Exemplos:
     }
 ```
 
-Uma variável **global** pode ser acessada até mesmo de dentro de uma função, como uma variavel local, mas ao alterarmos seu valor (dentro da função) todo o restante da aplicação verá o valor alterado.
+Uma variável **global** pode ser acessada até mesmo de dentro de uma função, como uma variável local, mas ao alterarmos seu valor (dentro da função) todo o restante da aplicação verá o valor alterado.
 
 O problema das **globais** é que elas são compartilhadas por todo o código em sua aplicação javascript ou sua página web. Elas coexistem no mesmo namespace global e sempre existe a possibilidade de ocorrerem colisões de nomes, por exemplo, quando duas partes separadas de uma aplicação usam variaveis globais de mesmo nome, mas com propósitos diferentes.
 
@@ -96,19 +96,19 @@ Exemplo:
     function nickName(first, second){
         var nickname = "";
 
-    function makeNickName(first, second){
-        return nickname = first+"-"+second;
-    }
+        function makeNickName(first, second){
+            return nickname = first+"-"+second;
+        }
 
-    return makeNickName(first, second);
-}
+        return makeNickName(first, second);
+    }
 ```
 
 
 ## Variável por parâmetro
 
-As funções no javascript podem ter N parametros. Caso na chamada de uma função, alguns parametros sejam omitidos, estes serão setatos como `undefined`.
-Quando uma variável global é passada como parametro de uma função, seu valor não é alterado, pois, mesmo que haja a tentativa, sua passagem é feita por valor e não por referência.
+As funções no javascript podem ter N parâmetros. Caso na chamada de uma função, alguns parâmetros sejam omitidos, estes serão setatos como `undefined`.
+Quando uma variável global é passada como parâmetro de uma função, seu valor não é alterado, pois, mesmo que haja a tentativa, sua passagem é feita por valor e não por referência.
 
 
 ## Instanciação usando uma IIFE
@@ -139,7 +139,7 @@ Por exemplo, se no exemplo anterior, tentarmos acessar  a variável `pokemon` no
 console.log(pokemon);
 ```
 
-É possível também passarmos parametros para funções imediatas. Para isto, basta no segundo par de parenteses final, informar o valor a ser passado como parametro.
+É possível também passarmos parâmetros para funções imediatas. Para isto, basta no segundo par de parenteses final, informar o valor a ser passado como parâmetro.
 
 Exemplo:
 ```javascript
