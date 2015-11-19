@@ -108,7 +108,108 @@ console.log(typeof getAge); // imprime number
 
 ## Closure
 
+> Uma clausura ocorre normalmente quando uma função é declarada dentro do corpo de outra, e a função interior referencia variáveis locais da função exterior. Em tempo de execução, quando a função exterior é executada, então uma clausura é formada, que consiste do código da função interior e referências para quaisquer variáveis no âmbito da função exterior que a clausura necessita.
+
+Abaixo está um exemplo que será transformado em uma closure, mas se encontra em um formato mais simples de ser lido e entendido. Veja o exemplo:
+
+```
+function init() {
+  var name = "Mozilla"; // name é uma variável local criada pela function init
+  function displayName() { // displayName() é uma inner function
+    console.log(name); // usando uma variavel declarada na funcao pai
+  }
+  displayName();
+}
+init();
+```
+[Rode o código acima no jsbin](https://jsbin.com/vovilayeho/edit?js,console)
+
+1. A função `init()` cria uma variável local chamada `name`.
+2. A seguir é criada uma função chamada `displayName()`. Ela pode ser chamada de inner function por ter sido definida dentro da função `init()` e está disponível somente dentro desta função.
+3. A função `displayName()` não possui nenhuma variável local. No entanto, possui acesso a variáveis da função pai `init()`.
+
+Agora veja esse outro exemplo:
+
+```
+function init() {
+  var name = "Mozilla"; // name é uma variável local criada pela function init
+  function displayName() { // displayName() é uma inner function
+    console.log(name);
+  }
+  return displayName; // pulo do gato
+}
+
+var myFunc = init();
+myFunc();
+```
+[Rode o código acima no jsbin](https://jsbin.com/vuzawitelo/edit?js,console)
+
+Os dois códigos acima possuem o mesmo resultado, ou seja, a string Mozilla é impressa no console. O que realmente muda entre os dois exemplos é que em um deles a função `displayName()` é executada e em outra a função `displayName()` é retornada antes de ser executada.
+
+Com isso é possível definir uma closure como um tipo especial de objeto que combina duas coisas:
+
+1. Uma função
+2. Um ambiente no qual a função foi criada.
+
+O ambiente consiste em qualquer variável local que estava no escopo na hora que a closure foi criada.
+
+De forma mais simples, uma closure é uma função filha que possui acesso aos membros da função pai. Uma função filha possui acesso aos seguintes escopos: ao seu escopo, ao escopo do pai e ao escopo global.
+
+Um exemplo simples para finalizar:
+
+```
+function some(from) {
+	return function(to) {
+		return from + to;
+	};
+}
+
+var soma1 = some(1);
+var soma5 = some(5);
+
+console.log(soma1(1)); // imprime 2
+console.log(soma5(5)); // imprime 10
+```
+[Rode o código acima no jsbin](https://jsbin.com/sijerefugi/edit?js,console)
+
+Mais um para ficar bem claro:
+
+```
+var PokemonFactory = function() {
+    var id = 0;
+    var createPokemon = function(name, attack, defense, type) {
+        id++;
+        return {
+            id: id,
+            name: name,
+            attack: attack,
+            defense: defense,
+            type: type
+        };
+    };
+
+    return createPokemon;
+};
+
+var newPokemon = PokemonFactory();
+var pikachu = newPokemon( "Pikachu", 0.5, 22, ['electric']);
+var charmander = newPokemon("Charmander", 0.2, 34, ['fire']);
+var bulbasaur = newPokemon("Bulbasaur", 0.3, 47, ['grass', 'poison']);
+
+console.log(pikachu);
+console.log(charmander);
+console.log(bulbasaur);
+```
+[Rode o código acima no jsbin](https://jsbin.com/picicitato/edit?js,console)
+
 ## Variável por parâmetro
 
 ## Instanciação usando uma IIFE
 
+## Referências
+
+* [JavaScript Variable Scope and Hoisting Explained](http://javascriptissexy.com/javascript-variable-scope-and-hoisting-explained/)
+* [Understand JavaScript Closures With Ease](http://javascriptissexy.com/understand-javascript-closures-with-ease/)
+* [Wikipedia](https://pt.wikipedia.org/wiki/Clausura_(ci%C3%AAncia_da_computa%C3%A7%C3%A3o))
+* [JavaScript Closures 101- they're not magic](http://www.javascriptkit.com/javatutors/closures.shtml)
+* [Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
