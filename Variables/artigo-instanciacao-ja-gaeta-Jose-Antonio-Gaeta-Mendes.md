@@ -1,15 +1,12 @@
 # Instanciação de variáveis no Javascript
 **autor**: José Antonio Gaeta Mendes
 
-**Prazo**: até dia 18 de Novembro de 2015
-
-Explique, com teoria e código, nesse artigo como o JavaScript cria e instancia as variáveis, seguindo os seguintes tópicos.
 
 ## Hoisting
 
 Hoisting nada mais é do que o mecanismo usado por JavaScript para definir o escopo de variáveis e funções. Todavia, seu comportamento costuma confundir o iniciante, tornando-se essencial o perfeito entendimento do seu funcionamento para utilizar plenamente este que é um dos aspectos mais expressivos e poderosos da linguagem.
 
-A palavra Hoist, em inglês, significa "elevar, alçar, erguer", no sentido, por exemplo, de um guindaste no porto que suspende a carga. Em JavaScript, o sentido é de "elevar" o escopo da variável ou função.
+A palavra Hoist, em inglês, significa "elevar, alçar, erguer", no sentido, por exemplo, de um guindaste no porto que suspende a carga. Em JavaScript, o sentido é de "mover para o topo" o escopo da variável ou função.
 
 Diferentemente das linguagens que seguem o estilo de C, onde o escopo é definido a nível de bloco, em JavaScript, o escopo é definido a nível de função... e é daí que vem toda a confusão.
 
@@ -193,13 +190,13 @@ alcunha = "Maria Gasolina";
 olaMaria = constroiFnOla(alcunha); // variável global passada como parâmetro
 
 olaZe(); // exibe: "Olá Zé do Caixão!"
-helloJudy(); // exibe "Olá Maria Gasolina!"
+olaMaria(); // exibe "Olá Maria Gasolina!"
 ```
 
 
 ## Instanciação usando uma IIFE
 
-Antigamente, as funções executadas no mesmo momento em que são definidas eram chamadas "self-executing anonymous function", isto é, "função anônima auto-executável". Num artigo publicado em 2010, um sujeito chamado [Ben Alman](https://github.com/cowboy), escreveu um artigo propondo denominar essas funções de "Immediately-Invoked Function Expression (IIFE)", que se traduz em português como "Definição de Função Imediatamente Executável".
+Antigamente, as funções executadas no mesmo momento em que são definidas eram chamadas "self-executing anonymous function", isto é, "função anônima auto-executável". Em 2010, um sujeito chamado [Ben Alman](https://github.com/cowboy), escreveu um artigo propondo denominar essas funções de "Immediately-Invoked Function Expression (IIFE)", que se traduz em português como "Definição de Função Imediatamente Executável".
 
 As IIFE são muito usadas em JavaScript funcional e o seu "jeitão" é o seguinte:
 
