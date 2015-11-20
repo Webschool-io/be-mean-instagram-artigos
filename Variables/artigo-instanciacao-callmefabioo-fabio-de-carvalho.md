@@ -4,7 +4,7 @@
 Neste artigo, iremos abordar alguns temas importantes sobre como o Javascript trata a instanciação de variáveis ou funções através de alguns mecanismos realmente interessantes. O primeiro deles é o **Hoisting**.
 
 ## Hoisting
-Seguindo o glossário da [Mozilla](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting){:target="_blank"}, hoisting é:
+Seguindo o glossário da [Mozilla](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting), hoisting é:
 
 > "JavaScript's behavior of moving declarations to the top of a scope (the global scope or the current function scope)."
 
@@ -17,7 +17,7 @@ Por padrão, todas as variáveis ou funções **declaradas** são *hoisted*. Com
 console.log(x);
 var x = 5;
 ```
-[Exemplo no JS Bin](http://jsbin.com/kadazag/edit?js,console,output){:target="_blank"}
+[Exemplo no JS Bin](http://jsbin.com/kadazag/edit?js,console,output)
 
 A saída foi *undefined*, correto? Isso acontece exatamente por causa do hoisting. Mas *"behind the scene"*, o JavaScript interpreta o exemplo acima dessa maneira:
 
@@ -44,7 +44,7 @@ var theLastQuestion = function() {
   console.log("42");
 }
 ```
-[Exemplo no JS Bin](http://jsbin.com/guxodu/edit?js,console,output){:target="_blank"}
+[Exemplo no JS Bin](http://jsbin.com/guxodu/edit?js,console,output)
 
 O mecanismo é o mesmo, porém com detalhe mencionado acima, **todo o corpo da função é movido para o topo do escope junto com ela.** E a maneira que o JavaScript interpreta não é alterada.
 
@@ -75,7 +75,7 @@ theLastQuestion = function() {
 
 ## Closure
 
-**Obs:** Este trecho foi massivamente inspirado no artigo: [JavaScript Closures Demystified](http://www.sitepoint.com/javascript-closures-demystified/){:target="_blank"}. Então tire um tempo para lê-lo, vale muito a pena.
+**Obs:** Este trecho foi massivamente inspirado no artigo: [JavaScript Closures Demystified](http://www.sitepoint.com/javascript-closures-demystified/). Então tire um tempo para lê-lo, vale muito a pena.
 
 Bom, deixe-me explicar. **Closures** são basicamente funções que residem dentro de outras funções. Confuso, não é mesmo?
 Vamos entrar em detalhes, porque o assunto é interessante.
@@ -94,7 +94,7 @@ var add = add(1);
 var addAgain = add(2);
 console.log(addAgain);
 ```
-[Exemplo no JS Bin](http://jsbin.com/sudaka/edit?js,console,output){:target="_blank"}
+[Exemplo no JS Bin](http://jsbin.com/sudaka/edit?js,console,output)
 
 Closures são úteis para uma série de coisas, como por exemplo o conceito de encapsulamento. Infelizmente o Javascript não é totalmente orientado a objetos, por isso ele não tem suporte a dados privados, ou protegidos. Mas é possível emular este comportamento usando closures.
 
@@ -115,7 +115,7 @@ person._name = 'Vegeta';
 
 console.log(person.getName());
 ```
-[Exemplo no JS Bin](http://jsbin.com/rohure/edit?js,console,output){:target="_blank"}
+[Exemplo no JS Bin](http://jsbin.com/rohure/edit?js,console,output)
 
 Mesmo você tendo a capacidade de alterar a variável "_name" manualmente, é garantido que o valor retornado será o valor passado como parâmentro no construtor. E assim nós emulamos o comportamento *private* de linguagens com maior suporte à encapsulamento.
 
@@ -136,7 +136,7 @@ function getSuperSayajin() {
   console.log(sayajin);
 }
 ```
-[Exemplo no JS Bin](http://jsbin.com/qajeqit/edit?js,console,output){:target="_blank"}
+[Exemplo no JS Bin](http://jsbin.com/qajeqit/edit?js,console,output)
 
 ## Variáveis por parâmetro
 
@@ -166,7 +166,7 @@ function log(x) {
 }
 console.log(x);
 ```
-[Exemplo do JS Bin](http://jsbin.com/mitolo/edit?js,console,output){:target="_blank"}
+[Exemplo do JS Bin](http://jsbin.com/mitolo/edit?js,console,output)
 
 ## Instanciação usando uma IIFE
 O termo IIFE significa `Immediately-Invoked Function Expression` e define uma função que é executada no momento da sua definição.
@@ -182,7 +182,7 @@ Uma variável pode receber um valor de uma IIFE da seguinte forma:
 
 console.log(x); // "ReferenceError: a is not defined
 ```
-[Exemplo do JS Bin](http://jsbin.com/qiyoxu/edit?js,console,output){:target="_blank"}
+[Exemplo do JS Bin](http://jsbin.com/qiyoxu/edit?js,console,output)
 
 Para passar variáveis por parâmetro em uma IIFE, ela deve ser colocada na última abertura de parênteses da sintaxe, assim:
 
@@ -191,19 +191,19 @@ Para passar variáveis por parâmetro em uma IIFE, ela deve ser colocada na últ
   console.log(x);
 }('Parâmetro passado lindamente!'));
 ```
-[Exemplo do JS Bin](http://jsbin.com/sexeso/edit?js,console,output){:target="_blank"}
+[Exemplo do JS Bin](http://jsbin.com/sexeso/edit?js,console,output)
 
 #### Referências
 
 ##### Hoisting
-[https://developer.mozilla.org/en-US/docs/Glossary/Hoisting](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting){:target="_blank"}
-[http://loopinfinito.com.br/2014/10/29/hoisting-e-escopo-em-javascript/](http://loopinfinito.com.br/2014/10/29/hoisting-e-escopo-em-javascript/){:target="_blank"}
-[http://www.sitepoint.com/demystifying-javascript-variable-scope-hoisting/](http://www.sitepoint.com/demystifying-javascript-variable-scope-hoisting/){:target="_blank"}
+[https://developer.mozilla.org/en-US/docs/Glossary/Hoisting](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)
+[http://loopinfinito.com.br/2014/10/29/hoisting-e-escopo-em-javascript/](http://loopinfinito.com.br/2014/10/29/hoisting-e-escopo-em-javascript/)
+[http://www.sitepoint.com/demystifying-javascript-variable-scope-hoisting/](http://www.sitepoint.com/demystifying-javascript-variable-scope-hoisting/)
 
 ##### Closures
-[http://www.sitepoint.com/javascript-closures-demystified/](http://www.sitepoint.com/javascript-closures-demystified/){:target="_blank"}
-[http://javascriptbrasil.com/2013/10/12/entenda-closures-no-javascript-com-facilidade/](http://javascriptbrasil.com/2013/10/12/entenda-closures-no-javascript-com-facilidade/){:target="_blank"}
+[http://www.sitepoint.com/javascript-closures-demystified/](http://www.sitepoint.com/javascript-closures-demystified/)
+[http://javascriptbrasil.com/2013/10/12/entenda-closures-no-javascript-com-facilidade/](http://javascriptbrasil.com/2013/10/12/entenda-closures-no-javascript-com-facilidade/)
 
 ##### IIFE
-[http://benalman.com/news/2010/11/immediately-invoked-function-expression/](http://benalman.com/news/2010/11/immediately-invoked-function-expression/){:target="_blank"}
+[http://benalman.com/news/2010/11/immediately-invoked-function-expression/](http://benalman.com/news/2010/11/immediately-invoked-function-expression/)
 
