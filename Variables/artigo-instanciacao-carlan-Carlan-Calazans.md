@@ -380,8 +380,6 @@ Uma função de callback é uma função que é passada como argumento para outr
 Veja bem, quando passamos uma função de callback para outra função, a função de callback é executada dentro do corpo da outra função como se tivesse sido escrita lá dentro.
 
 ## Instanciação usando uma IIFE
-_Explique como uma variável pode receber um valor de uma IIFE. Explique como passar uma variável por parâmetro para a IIFE e acontece com ela dentro da função._
-TODO
 
 >Uma função imediata é um padrão que produz um escopo léxico unado a função de escopo do JavaScript. Funções imediatas podem ser usadas para evitar a elevação de variáveis (hoisting) dentro de blocos, protegendo o ambiente global de ser poluído e simultanamente permite o acesso público a métodos enquanto retem a privacidade para as variáveis declaradas dentro da função.
 
