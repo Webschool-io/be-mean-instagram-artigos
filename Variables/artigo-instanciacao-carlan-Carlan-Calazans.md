@@ -193,7 +193,7 @@ O pulo do gato para entender closures é entender como funções dentro de funç
 
 ### Função dentro de função
 
-1. Uma função filha (ou inner function) pode referenciar o escopo da função pai (outer function)
+1) Uma função filha (ou inner function) pode referenciar o escopo da função pai (outer function)
 
 ```javascript
 function digaOi(name) { // outer function
@@ -213,7 +213,7 @@ digaOi("Carlan"); // imprime Oi, Carlan!
 
 No exemplo acima, a função `oi()` possui acesso a variável `name` da função `digaOi(name)`. Ao chamar a função `digaOi(name)` passando como parâmetro o meu primeiro nome, a função `oi()` pode acessar as variáveis e parâmetros da função `digaOi(name)` imprimindo no console o resultado "Oi, Carlan!".
 
-2. Uma função filha (ou inner function) pode referenciar uma variável definida na função pai (ou outer function) mesmo depois da função pai ter sido retornada
+2) Uma função filha (ou inner function) pode referenciar uma variável definida na função pai (ou outer function) mesmo depois da função pai ter sido retornada
 
 ```javascript
 function digaOi(name) { // outer function
@@ -243,7 +243,7 @@ A única diferença entre o exemplo anterior é que a função filha (ou inner f
 
 Como pode ser observado, aparentemente a função `digaOi(name)` já não existe, mas a função `oi()` ainda pode acessar o seu escopo, a variável `name`.
 
-3. Uma função filha (ou inner function) armazena o valor de variáveis do escopo da função pai (ou outer function) por referência e não valor
+3) Uma função filha (ou inner function) armazena o valor de variáveis do escopo da função pai (ou outer function) por referência e não valor
 
 ```javascript
 function digaMeuNome() { // outer function
@@ -269,7 +269,7 @@ Com esse exemplo é possível perceber que as closures compartilham as variávei
 
 ### Onde usar
 
-1. "Variáveis de instância" e fábrica de objetos
+1) "Variáveis de instância" e fábrica de objetos ou pattern module
 
 ```javascript
 function Pokemon(pname, pattack, pdefense, ptype) {
@@ -323,23 +323,107 @@ console.log(pikachu.name);
 
 O exemplo acima está sendo utilizado para mostrar dois casos de uma vez. O primeiro deles é referente a "variáveis de instância" (com aspas). A manipulação das variáveis informadas pela função Pokemon só acontecerá através das closures definidas dentro do objeto retornado. O segundo caso é uma fábrica de objetos, duh.
 
-## Variável Global
-_Explique como se usa uma var Global dentro de uma função._
-TODO
+2) Funções de callback
 
-## Variável por parâmetro
-_Explique o que acontece dentro da função qnd um parâmetro é passado e também explique quando uma GLOBAL é passada por parâmetro._
-TODO
+```javascript
+// imprime a receita
+function printRecipe(recipeName, ingredients, steps) {
+  console.log('Receita de ' + recipeName);
+  console.log('Ingredientes:');
+  for (var ingredient in ingredients) {
+    if (ingredients.hasOwnProperty(ingredient)) {
+      console.log("  - " + ingredient + " (" + ingredients[ingredient] + ")");
+    }
+  }
+  console.log('Passo a passo:');
+  for (var i = 1; i <= steps.length; i++) {
+    console.log(i + ". " + steps[i-1]);
+  }
+
+}
+
+// recebe o input do usuario
+function getInput(recipeName, ingredients, steps, callback) {
+  if(typeof callback === 'function') {
+	callback(recipeName, ingredients, steps);
+  }
+}
+
+// entrada de dados e inicializacao
+
+var r = "Cup Cake";
+
+var i = {
+  'Baunilha': '12ml',
+  'Fermento em pó': '12g',
+  'Leite': '220ml',
+  'Ovos': '4',
+  'Açúcar': '350g',
+  'Margarina': '220g',
+  'Farinha de trigo': '350g',
+  'Sal': '2g'};
+
+var s = [
+  'Na tigela da batedeira coloque açúcar refinado...',
+  'Adicione os ovos um a um com a batedeira...',
+  'Em outra tigela, adicione a baunilha no leite e reserve.',
+  '...',
+  'Leve ao forno pré-aquecido por 25m'];
+
+// chamada da funcao que obtem o input do usuario com os dados acima
+getInput(r, i, s, printRecipe);
+```
+[Rode o código acima no JS Bin](https://jsbin.com/xipajopaxu/edit?js,console)
+
+Uma função de callback é uma função que é passada como argumento para outra função e em um dado momento a função de callback é executada dentro da outra função. Deu pra perceber que funções de callback são closures?
+
+Veja bem, quando passamos uma função de callback para outra função, a função de callback é executada dentro do corpo da outra função como se tivesse sido escrita lá dentro.
 
 ## Instanciação usando uma IIFE
 _Explique como uma variável pode receber um valor de uma IIFE. Explique como passar uma variável por parâmetro para a IIFE e acontece com ela dentro da função._
 TODO
 
+>Uma função imediata é um padrão que produz um escopo léxico unado a função de escopo do JavaScript. Funções imediatas podem ser usadas para evitar a elevação de variáveis (hoisting) dentro de blocos, protegendo o ambiente global de ser poluído e simultanamente permite o acesso público a métodos enquanto retem a privacidade para as variáveis declaradas dentro da função.
+
+De forma mais simples, uma IIFE é uma função que é executada logo após a sua criação.
+
+Há mais de uma maneira de se escrever uma IIFE, mas a versão mais comum utilizada é conforme apresentado abaixo:
+
+```javascript
+(function() {
+  // corpo
+  // escopo proprio
+})();
+```
+
+Observe que trata-se de uma função envolvida com parênteses, depois temos um abre e fecha parênteses e, por fim um ponto e vírgula.
+
+Para transformar uma função em uma IFFE, basta fazer conforme foi explicado no parâgrafo anterior. No entanto, como ficam as funções que possuem parâmetros?
+
+Para enviar parâmetros para esta função basta:
+
+```javascript
+(function(name, type) {
+  // a variavel name contem "Pikachu"
+  // a variavel type contem ['electric']
+})("Pikachu", ['electric']);
+```
+
+É possível atribuir uma IFFE a uma variável da seguinte maneira:
+
+```javascript
+var digaOi = function() {
+  console.log('oi');
+}();
+```
+
+Uma IFFE geralmente é utilizada para criar um escopo próprio. Dentro da IFFE o escopo é privado e protegido de modificações acidentais.
+
 ## Referências
 
 * [JavaScript Variable Scope and Hoisting Explained](http://javascriptissexy.com/javascript-variable-scope-and-hoisting-explained/)
 * [Understand JavaScript Closures With Ease](http://javascriptissexy.com/understand-javascript-closures-with-ease/)
-* [Wikipedia](https://pt.wikipedia.org/wiki/Clausura_(ci%C3%AAncia_da_computa%C3%A7%C3%A3o))
+* [Wikipedia sobre closure](https://pt.wikipedia.org/wiki/Clausura_(ci%C3%AAncia_da_computa%C3%A7%C3%A3o))
 * [JavaScript Closures 101- they're not magic](http://www.javascriptkit.com/javatutors/closures.shtml)
 * [Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
 * [Variable Scope Basics](http://www.kirupa.com/html5/variable_scope_js.htm)
@@ -347,3 +431,5 @@ TODO
 * [JavaScript Variables](http://www.w3schools.com/js/js_variables.asp)
 * [JavaScript Closures](http://www.w3schools.com/js/js_function_closures.asp)
 * [Why use "closure"?](http://howtonode.org/why-use-closure)
+* [Wikipedia sobre IIFE](https://en.wikipedia.org/wiki/Immediately-invoked_function_expression)
+* [JavaScript: The Right Way](http://jstherightway.org/pt-br/)
