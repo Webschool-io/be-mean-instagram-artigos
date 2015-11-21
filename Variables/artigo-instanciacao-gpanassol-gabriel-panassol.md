@@ -97,11 +97,9 @@ name('Gabriel', 'Panassol');
 Nesse exemplo vemos que a função name() recebe dois paramêtros, firstName e lastName, e dentro dessa função temos uma função closure chamada showName() que concatena essas 
 duas variáveis. Um detalhe importante veja que a função name retorna showName().
 
-## Variável Global - Em contrução
+## Variável Global
 
-Explique como se usa uma var Global dentro de uma função.
-
-Todas as variáveis declaradas fora de uma função são variáveis globais. E assim estará disponível para toda a apliação. Vamos ao exemplo:
+Todas as variáveis declaradas fora de uma função são variáveis globais. E assim estará disponível para toda a aplicação. Vamos ao exemplo:
 
 ```
 var a = 1;
@@ -185,11 +183,3 @@ Sua sintaxe:
 - https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Closures
 - http://tutsmais.com.br/blog/javascript-2/o-que-e-iife-no-javascript/
 - http://imasters.com.br/front-end/javascript/sobre-funcoes-imediatas-javascript-iife/
-
-
-# Envio
-
-1. Fork [esse repositório](https://github.com/Webschool-io/be-mean-instagram-artigos/) 
-2. Nomeie seu artigo usando o seguinte padrão: artigo-instanciacao-githubuser-nome-completo.md
-3. Adicione seu exercício aqui na Pasta Variables
-4. Faça um Pull Requst enviando seu artigo.
