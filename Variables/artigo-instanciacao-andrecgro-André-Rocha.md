@@ -4,11 +4,11 @@
 ## Definição
 
     O conceito de variável é carregado para todas as linguagens de programação, funcionando basicamente como uma referência à um espaço de memória. De forma mais simples, trata-se de uma forma de armazenar e acessar valores em seu programa de forma fácil.
-    Como o nome sugere, as variáveis podem alterar seus valores durante a execução do programa, diferente das chamadas `constantes`, que vamos falar adiante.
+    Como o nome sugere, as variáveis podem alterar seus valores durante a execução do programa, diferente das chamadas ´´´constantes´´´, que vamos falar adiante.
 
 ### Tipos de Variáveis
 
-    Em algumas linguagens de programação, chamadas de `fortemente tipadas`, você é obrigado a declarar qual tipo de dado será armazenado por aquela variável para o programa ou [`compilador`](https://pt.wikipedia.org/wiki/Compilador) guardar o devido espaço na memória.
+    Em algumas linguagens de programação, chamadas de ´´´fortemente tipadas´´´, você é obrigado a declarar qual tipo de dado será armazenado por aquela variável para o programa ou [´´´compilador´´´](https://pt.wikipedia.org/wiki/Compilador) guardar o devido espaço na memória.
     No JavaScript, uma linguagem de `tipagem fraca`, declaramos nossas variáveis sem mencionar qual o tipo de dado que estamos tratando, isso nos permite maior flexibilidade de programação já que, não apenas o valor das variáveis mas também o seu tipo de dado pode ser alterado durante a execução do Programa.
 
     Temos 6 tipos de dados e variáveis em Javascript:
