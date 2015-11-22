@@ -1,8 +1,7 @@
 # Variáveis e Funções no JavaScript: criação e instanciação
 **Autor**: [André Rocha](https://github.com/andrecgro)
 
-## Definição
-
+# Definição
     O conceito de variável é carregado para todas as linguagens de programação, funcionando basicamente como uma referência à um espaço de memória. De forma mais simples, trata-se de uma forma de armazenar e acessar valores em seu programa de forma fácil.
     Como o nome sugere, as variáveis podem alterar seus valores durante a execução do programa, diferente das chamadas ```constantes```, que vamos falar adiante.
 
