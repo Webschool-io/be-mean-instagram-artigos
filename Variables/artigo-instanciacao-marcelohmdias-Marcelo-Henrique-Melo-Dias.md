@@ -270,7 +270,7 @@ Viu como entender os conceitos nos ajuda a tornar a programação menos custosa.
 
 Espero que tenham gostado, e principalmente entendito um pouco sobre o que tentei passar sobre os conceitos de instanciação, e também como funciona essa incrível linguagem.
 
-Bem, até a proxima! Isso mesmo vai ter próxima (agradeçam ao professor....Valeu [Suissa](https://github.com/suissa)).
+Bem, até a proxima! Isso mesmo vai ter próxima.
 
 ## Referencial Teórico
 
