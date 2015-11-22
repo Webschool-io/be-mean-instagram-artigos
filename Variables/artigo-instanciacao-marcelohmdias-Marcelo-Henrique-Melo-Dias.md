@@ -14,7 +14,7 @@ O site ainda completa:
 
 >"A instanciação significa a criação de um nova instância, por meio da criação de uma variante do material"
 
-Podemos chegar a conclusão de que instanciação é o ato criação de novos "objetos" (entenda objeto aqui como um item genêrico), ou mesmo a replica de um já existente.
+Podemos chegar a conclusão de que instanciação é o ato criação de novos "objetos" (entenda objeto aqui como um item genêrico), ou mesmo a réplica de um já existente.
 
 Ok, mas como isso é feito em Javascript? Isso vamos descobri a seguir.
 
