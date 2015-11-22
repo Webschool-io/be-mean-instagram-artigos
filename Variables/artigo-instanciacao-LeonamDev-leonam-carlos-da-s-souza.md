@@ -192,10 +192,10 @@ Isso é bom para criarmos cópias de variaveis globais, e garantirmos que se alg
 
 ## Referências Bibliográficas
 
-http://loopinfinito.com.br/2014/10/29/hoisting-e-escopo-em-javascript/
-http://www.w3schools.com/js/js_hoisting.asp
-http://blog.da2k.com.br/2015/02/20/os-segredos-da-iife/
-http://www.raphaelfabeni.com.br/dicas-rapidas-javascript-2/
+* http://loopinfinito.com.br/2014/10/29/hoisting-e-escopo-em-javascript/
+* http://www.w3schools.com/js/js_hoisting.asp
+* http://blog.da2k.com.br/2015/02/20/os-segredos-da-iife/
+* http://www.raphaelfabeni.com.br/dicas-rapidas-javascript-2/
 
 
 
