@@ -189,8 +189,4 @@ console.log( number1 );
 
 No código passamos nossa IIFE para uma variável chamada myIife, onde declaramos outra variável de nome number1 e retornamos uma função que soma number1 e o parâmetro x. Ao mostrar esse resultado passando o parâmetro dois por parametro na variável myIife, o resultado é 22, onde pegamos dentro do escopo da IIFE a variável number1 e somamos com x. Ao mostrar no console a variável number1 vai dar erro dizendo que a variável não está definada, só confirmando o que falamos antes, que uma função IIFE cria seu pŕoprio escopo e não se mistura com o escopo global. 
 
-
-1. Fork [esse repositório](https://github.com/Webschool-io/be-mean-instagram-artigos/) 
-2. Nomeie seu artigo usando o seguinte padrão: artigo-instanciacao-githubuser-nome-completo.md
-3. Adicione seu exercício aqui na Pasta Variables
-4. Faça um Pull Requst enviando seu artigo.
+Acredito que dei meu máximo para escrever esse artigo e tentar mostrar minha visão dos assuntos abordados. Não tinha muito conhecimento de algumas coisas, mas foi divertido pesquisar e aprender coisas novas. Espero que gostem do artigo. Valeu galere! Até a próxima. :D
