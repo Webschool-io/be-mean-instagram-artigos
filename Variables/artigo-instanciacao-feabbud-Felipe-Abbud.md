@@ -163,19 +163,30 @@ Mesmo sendo variáveis locais, esses parâmetros podem receber variáveis globai
 
 ## Instanciação usando uma IIFE
 
-Explique como uma variável pode receber um valor de uma IIFE.
-Explique como passar uma variável por parâmetro para a IIFE e acontece com ela dentro da função.
+IIFE é uma função anônima criada e imediatamente executada. Não é chamada de nenhum lugar, mas só funciona depois de ser criada. Abaixo a sintaxe de uma IIFE.
 
+'''js
+(function(){
+    return 1 + 5;
+} ) ();
+'''
+Ao criar uma IIFE, podemos criar um escopo temporário para funções e variáveis, com isso evitamos conflitos entre variáveis e funções, e poluição no nosso escopo global.
+Uma variável também pode receber uma IIFE.
 
-## Considerações
+'''js
+var myIife = ( function(){
+    var number1 = 20;
+    return function( x ) {
+        return number1 + x;
+}
+    
+} () ); 
 
-Quanto mais explicado melhor.
+myIife(2);
+console.log( number1 );
+'''
+No código passamos nossa IIFE para uma variável chamada myIife, onde declaramos outra variável de nome number1 e retornamos uma função que soma number1 e o parâmetro x. Ao mostrar esse resultado passando o parâmetro dois por parametro na variável myIife, o resultado é 22, onde pegamos dentro do escopo da IIFE a variável number1 e somamos com x. Ao mostrar no console a variável number1 vai dar erro dizendo que a variável não está definada, só confirmando o que falamos antes, que uma função IIFE cria seu pŕoprio escopo e não se mistura com o escopo global. 
 
-Lembre que isso fará parte do seu currículo como aluno e será disponilizado no sistema de vagas, ou seja, o contratante poderá ver todos seus projetos e trabalhos feitos nesse curso.
-
-Boa sorte.
-
-# Envio
 
 1. Fork [esse repositório](https://github.com/Webschool-io/be-mean-instagram-artigos/) 
 2. Nomeie seu artigo usando o seguinte padrão: artigo-instanciacao-githubuser-nome-completo.md
