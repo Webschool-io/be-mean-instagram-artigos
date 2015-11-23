@@ -21,7 +21,7 @@ imprimir(); // 1
 // Imprimindo a variável do escopo global
 console.log(num); // 0
 ```
-No exemplo acima temos o seguinte: A variável "num" foi declarada com o mesmo nome em 2 diferentes: No escopo global e no escopo criado pela função imprimir. Por elas estarem em escopos diferentes, não tem problema terem o mesmo nome.
+No exemplo acima temos o seguinte: A variável "num" foi declarada com o mesmo nome em 2 lugares diferentes: No escopo global e no escopo criado pela função imprimir. Por elas estarem em escopos diferentes, não tem problema terem o mesmo nome.
 
 Mas **cuidado** ! As variáveis declaras sem a palavra reservada "var" passam a ser parte do escopo global. Olha só:
 
@@ -47,9 +47,9 @@ em seu escopo e manter o escopo global limpo.
 
 Legal, agora que já relembramos o escopo em Javascript vamos entender o que é o hoisting.
 
-> Hoisting em pode ser traduzido como levantar, erguer ou içar.
+> Hoisting pode ser traduzido como levantar, erguer ou içar.
 
-Esse comportamento na linguagem JavaScript vale para funções e variáveis. Vamos falar primeiro sobre o hoisting de variaveis. Quando declaramos uma variável em JavaScript a mesma é erguida, ou hoisted, para o topo do escopo, no caso de variaveis somente a sua declaração é levada para o topo do e não a sua inicialização. Por exemplo:
+Esse comportamento na linguagem JavaScript vale para funções e variáveis. Vamos falar primeiro sobre o hoisting de variaveis. Quando declaramos uma variável em JavaScript a mesma é erguida, ou hoisted, para o topo do escopo, no caso de variaveis somente a sua declaração é levada para o topo do escopo mas sua inicialização não. Por exemplo:
 
 ```js
 function nome(){
@@ -60,10 +60,10 @@ function nome(){
 nome(); // Alex undefined
 ```
 O valor da variável sobreNome é undefined, ou seja, ela esta sendo considerada na função mas o seu valor não. 
-É assim o hoisting de variável. ;)
+E é assim que funciona o hoisting de variável. ;)
 
 No caso de funções o hoisting ocorre de um jeito diferente. Tanto a sua declaração quanto o seu escopo é içado 
-para o topo do escopo. Veja:
+para o topo. Olha que interessante:
 
 ```js
 nome(); // Alex
@@ -107,7 +107,7 @@ function lancamentoDeNota(nome, exercicio , nota){
 
 lancamentoDeNota("Alex", "Importando collections", "10"); // Avaliação do exercício : Importando collections Aluno: Alex Nota: 10
 ```
-Vimos um exemplo de como o JavaScript trabalha com closure. Mas ainda temos uma diferença muito bacana na linguagem, em JavaScript é possível escapar a função interna do seu confinamento. Vamos avaliar o código abaixo:
+Acabamos de ver um exemplo de closure em JavaScript, mas ainda temos uma diferença muito bacana na linguagem. Em JavaScript é possível escapar a função interna do seu confinamento. Vamos avaliar o código abaixo:
 
 ```js
 // função externa
@@ -119,7 +119,7 @@ function lancamentoDeNota(nome, exercicio , nota){
 		mensagem += "\n Nota: " + nota;
 		console.log(mensagem)
 	}
-	// escapando a função interna retornando ela de forma literal para função externa. Malandragem é pouco pro JS kkk
+	// escapando a função interna retornando ela de forma literal para função externa. Malandragem é pouco pro JS kkkk
 	return fechamento;
 }
 var primeiroExercicio = lancamentoDeNota("Alex", "Importando collections", "10");
@@ -150,7 +150,7 @@ imprimir(); // 1
 // Acessando a variável do escopo global
 console.log(num); // 1
 ```
-Todas as variaveis que **não** forem declaradas com a palavra reservada 'var'serão consideradas parte do escopo 
+Todas as variaveis que **não** forem declaradas com a palavra reservada 'var' serão consideradas parte do escopo 
 global.
 
 ## Variável por parâmetro
@@ -200,4 +200,4 @@ var nome = (function(nome){
  console.log("Artigo escrito por: " + nome); // Alex
 }("Alex"))
 ```
-Bem bacana né ? A IIFE é um pattener em JavaScript que evita poluição no escopo global e com ela é possivel modularizar o código.
+Bem bacana né ? A IIFE é um pattener em JavaScript que evita poluição no escopo global e com ela também é possivel modularizar o código e deixar tudo mais organizado. 
