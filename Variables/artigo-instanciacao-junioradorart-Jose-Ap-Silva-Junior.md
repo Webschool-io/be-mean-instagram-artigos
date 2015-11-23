@@ -80,7 +80,7 @@ function minhaFuncao(){
 }
 minhaFuncao();
 ```
-Talvez voce espere que 'variável global' seja impresso no primeiro `console.log()`, já que a variavel `variavel1` foi declarada globalmente fora do escopo da função, porém sinto decepcioná-lo. Na primeira impressão no console teremos `undefined`, pois, `variavel1` é considerada uma variavel local à função (mesmo tendo sida declarada posteriormente).
+Talvez você espere que 'variável global' seja impresso no primeiro `console.log()`, já que a variavel `variavel1` foi declarada globalmente fora do escopo da função, porém sinto decepcioná-lo. Na primeira impressão no console teremos `undefined`, pois, `variavel1` é considerada uma variavel local à função (mesmo tendo sida declarada posteriormente).
 
 Então, para evitar confusões como esta, escolha declarar todas as variáveis que for usar no inicio do escopo.
 
@@ -149,4 +149,19 @@ Exemplo:
     console.log(pokemon);
 }("Pikachu"));
 
+```
+Ah! Vale dizer também, que uma IIFE pode ser escrita assim:
+```javascript
+    (function(){
+    var pokemon = "";
+    // ...
+    }())
+```
+
+Ou assim (repare nos parenteses finais):
+```javascript
+    (function(){
+    var pokemon = "";
+    // ...
+    })()
 ```
