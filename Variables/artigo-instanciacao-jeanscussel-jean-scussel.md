@@ -371,11 +371,7 @@ Se transformarmos uma função em Function Expression e, em seguida, um conjunto
 
 ## Considerações
 
-Quanto mais explicado melhor.
-
-Lembre que isso fará parte do seu currículo como aluno e será disponilizado no sistema de vagas, ou seja, o contratante poderá ver todos seus projetos e trabalhos feitos nesse curso.
-
-Boa sorte.
+Espero ter conseguido explicar da forma mais simples possível, para que os, que assim como estejam procurando um texto introdutório. Busquei da melhor forma organizar as idéias principais e pegar os melhores exemplos que achei.
 
 ##Referências
 
@@ -388,9 +384,3 @@ http://www.w3schools.com/js/js_function_closures.asp
 http://javascriptbrasil.com/2013/10/12/entenda-closures-no-javascript-com-facilidade/
 http://snook.ca/archives/javascript/global_variable
 
-# Envio
-
-1. Fork [esse repositório](https://github.com/Webschool-io/be-mean-instagram-artigos/) 
-2. Nomeie seu artigo usando o seguinte padrão: artigo-instanciacao-githubuser-nome-completo.md
-3. Adicione seu exercício aqui na Pasta Variables
-4. Faça um Pull Requst enviando seu artigo.
