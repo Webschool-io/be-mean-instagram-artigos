@@ -151,12 +151,14 @@ function myFunction2 (){
     return number;
 }
 ```
-Nesse caso, ao ser declarada a variável number sem o 'var' dentro da função myFunction(), ela pode ser acessada pela função myFunction2(), sendo assim uma variável global( podendo ter muitos problemas com isso!). Para não haver erros comsuas funções e variáveis, declare sempre com o 'var' na frente, separando variáveis globais e locais.
+Nesse caso, ao ser declarada a variável number sem o 'var' dentro da função myFunction(), ela pode ser acessada pela função myFunction2(), sendo assim uma variável global( podendo ter muitos problemas com isso!). Para não haver erros com suas funções e variáveis, declare sempre com o 'var' na frente, separando variáveis globais e locais.
 
 
 ## Variável por parâmetro
 
-Explique o que acontece dentro da função qnd um parâmetro é passado e também explique quando uma GLOBAL é passada por parâmetro.
+Uma função pode ter 0 ou mais parâmetros declarados, parâmetros esses que são variáveis locais da função onde são declarados e são utilizados somente dentro desse escopo não podendo ser acessadas de fora do escopo local. Quando a função é invocada e o parâmetro não é passado, automaticamente recebe o valor undefined. Você pode passar números, strings e objetos para esses parâmetros, não sendo limitados.
+
+Mesmo sendo variáveis locais, esses parâmetros podem receber variáveis globais. Mesmo que mude o valor dessa variável dentro da função, fora dela nada vai alterar.
 
 
 ## Instanciação usando uma IIFE
