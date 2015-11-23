@@ -5,7 +5,7 @@ Explique, com teoria e código, nesse artigo como o JavaScript cria e instancia 
 
 ## Hoisting
 ### Explique o que é, o porquê acontece e como acontece com variável e função.
-	É a elevação ao topo do escopo as declarações das variáveis e as funções declaradas dentro do escopo.
+	>É a elevação ao topo do escopo as declarações das variáveis e as funções declaradas dentro do escopo.
 	
 	**Exemplo 01 -  Hoisting Variável**
 	```javascript
@@ -42,11 +42,11 @@ Explique, com teoria e código, nesse artigo como o JavaScript cria e instancia 
 	
 ## Closure
 ### Explique o que é, o porquê acontece e como usar.
-	É uma função interna de outra função, que tem acesso as variáveis globais e também aos parâmetros e variáveis da função externa, da mesma maneira que os seus parâmetros e variáveis.
-	Uma função closure tem acesso aos três níveis de escopo(o seu, o da função externa e ao global), mesmo após o retorno da função exterior.
+	>É uma função interna de outra função, que tem acesso as variáveis globais e também aos parâmetros e variáveis da função externa, da mesma maneira que os seus parâmetros e variáveis.
+	>Uma função closure tem acesso aos três níveis de escopo(o seu, o da função externa e ao global), mesmo após o retorno da função exterior.
 
 ### Cite situações que você usaria.
-	Em botões para ajustar o tamanho do texto de uma página.
+	>Utilizaria em botões para ajustar o tamanho do texto de uma página.
 	
 	**Exemplo - Closure**
 	```javascript
@@ -67,7 +67,8 @@ Explique, com teoria e código, nesse artigo como o JavaScript cria e instancia 
 	
 ## Variável Global
 ### Explique como se usa uma var Global dentro de uma função.
-	Uma variável declarada no escopo global pode ser acessada por todos os scripts e funções em uma págian web.
+	>Uma variável declarada no escopo global pode ser acessada por todos os scripts e funções em uma págian web.
+	
 	**Exemplo - Variável Global**
 	```javascript
 	var myName = "Helton Barbosa";
@@ -83,12 +84,12 @@ Explique, com teoria e código, nesse artigo como o JavaScript cria e instancia 
 	
 ## Variável por parâmetro
 ### Explique o que acontece dentro da função quando um parâmetro é passado e também explique quando uma GLOBAL é passada por parâmetro.
-	Os parâmetros atuarão como variáveis locais dentro do escopo da função.
-	Ao passar parâmetros para uma função com argumentos especificados, os valores dos parâmetros serão atribuídos as variáveis locais com o mesmo nome dos argumentos.
-	O mesmo ocorre quando passamos variáveis globais por parâmetro.
-	Em funções que não existe a especificação dos argumentos, os valores passados por parâmetros poderão ser acessados pelo array arguments.
+	>Os parâmetros atuarão como variáveis locais dentro do escopo da função.
+	>Ao passar parâmetros para uma função com argumentos especificados, os valores dos parâmetros serão atribuídos as variáveis locais com o mesmo nome dos argumentos.
+	>O mesmo ocorre quando passamos variáveis globais por parâmetro.
+	>Em funções que não existe a especificação dos argumentos, os valores passados por parâmetros poderão ser acessados pelo array arguments.
 	
-	Exemplo - Variável por parâmetros
+	**Exemplo - Variável por parâmetros**
 	```javascript
 	var a = 1; // variável global
 
@@ -115,11 +116,11 @@ Explique, com teoria e código, nesse artigo como o JavaScript cria e instancia 
 	[Clique aqui e execulte exemplo acima no JsBin.com](https://jsbin.com/jeloci/edit?js,console)
 
 ## Instanciação usando uma IIFE - Immediately-Invoked Function Expression
-	IIFE é um padrão de projeto JavaScript, comumente utilizado em bibliotecas para inserir código em um escopo local.
+	>IIFE é um padrão de projeto JavaScript, comumente utilizado em bibliotecas para inserir código em um escopo local.
 	Permitindo que seu código possa ficar “isolado”, protegendo o escopo de uma porção de código ou módulos do ambiente em que a função foi utilizada.
 
 ### Explique como uma variável pode receber um valor de uma IIFE.
-	Uma variável pode receber um valor através de um retorno de função ou a função em si.
+	>Uma variável pode receber um valor através de um retorno de função ou a função em si.
 		
 	**Exemplo - IIFE - Atribuição de valor através de uma IIFE
 	```javascript
@@ -136,7 +137,7 @@ Explique, com teoria e código, nesse artigo como o JavaScript cria e instancia 
 	[Clique aqui e execulte exemplo acima no JsBin.com](https://jsbin.com/zaqebu/edit?js,console)
 	
 ### Explique como passar uma variável por parâmetro para a IIFE e acontece com ela dentro da função.
-	As variáveis que recebem a função em si como valor podem acessar suas funções e assim passar parâmetros.
+	>As variáveis que recebem a função em si como valor podem acessar suas funções e assim passar parâmetros.
 	
 	**Exemplo - IIFE - Passagem de parâmetros para uma função IIFE**
 	```javascript
