@@ -172,7 +172,7 @@
   Executando este trecho de código você poderá ter uma noção mais clara do que estamos falando, observando que o primeiro ``` alert ``` irá imprimir a sentença com a variável local e seu valor sobreposto à variável global, diferente do segundo ```alert``` que imprimirá o valor da variável global por estar fora do escopo da IIFE em questão.
 
 
-  ### Passando parâmetros para uma IIFE
+### Passando parâmetros para uma IIFE
 
    A passagem de parâmetros para uma IIFE reserva uma sintaxe um pouco diferente, mas também muito simples, como quase todo o Javascript.
    Primeiramente você deve referenciar os parâmetros que serão utilizados dentro dos parênteses da IIFE, como faria com qualquer outra função.
