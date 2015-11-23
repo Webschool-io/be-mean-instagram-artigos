@@ -42,7 +42,7 @@ Explique, com teoria e código, nesse artigo como o JavaScript cria e instancia 
 	
 ## Closure
 ### Explique o que é, o porquê acontece e como usar.
-É uma função interna de outra função, que tem acesso as variáveis globais e também aos parâmetros e variáveis da função externa, da mesma maneira que os seus parâmetros e variáveis.
+É uma função interna de outra função, que tem acesso as variáveis globais e também aos argumentos e variáveis da função externa, da mesma maneira que os seus argumentos e variáveis.
 Uma função closure tem acesso aos três níveis de escopo(o seu, o da função externa e ao global), mesmo após o retorno da função exterior.
 
 ### Cite situações que você usaria.
