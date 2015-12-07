@@ -1,6 +1,4 @@
 # Artigo 2
-**Autor**: Nome Completo - [githubuser](link pro perfil)
-**Data**: // execute o Date.now() e coloque o timestamp aqui
 
 Explique como funciona o Garbage Collector no JavaScript e como é a execução de funções e armazenamento de variáveis com JavaScript.
 
@@ -12,7 +10,21 @@ Lembre que isso fará parte do seu currículo como aluno e será disponilizado n
 
 Boa sorte.
 
-# Envio
+
+## Modelo
+
+Use o o modelo que está entre ` ``` `.
+
+```
+# Artigo - Garbage Collector
+**Autor**: Nome Completo - [githubuser](link pro perfil)
+**Data**: // execute o Date.now() e coloque o timestamp aqui
+
+Seu texto
+
+```
+
+## Envio
 
 1. Fork [esse repositório](https://github.com/Webschool-io/be-mean-instagram-artigos/) 
 2. Nomeie seu artigo usando o seguinte padrão: artigo-garbage-collector-githubuser-nome-completo.md
@@ -22,8 +34,7 @@ Boa sorte.
 
 # Artigo 1
 **autor**: Suissa
-
-**Prazo**: **SEM PRAZO**
+**Prazo**: **sem limite**
 
 Explique, com teoria e código, nesse artigo como o JavaScript cria e instancia as variáveis, seguindo os seguintes tópicos.
 
@@ -50,7 +61,6 @@ Explique o que acontece dentro da função qnd um parâmetro é passado e també
 Explique como uma variável pode receber um valor de uma IIFE.
 Explique como passar uma variável por parâmetro para a IIFE e acontece com ela dentro da função.
 
-
 ## Considerações
 
 Quanto mais explicado melhor.
@@ -59,9 +69,34 @@ Lembre que isso fará parte do seu currículo como aluno e será disponilizado n
 
 Boa sorte.
 
-# Envio
+## Modelo
+
+Use o o modelo que está entre ` ``` `.
+
+```
+# Artigo - Instanciação
+**Autor**: Nome Completo - [githubuser](link pro perfil)
+**Data**: // execute o Date.now() e coloque o timestamp aqui
+
+Seu texto
+
+## Hoisting
+
+## Closure
+
+## Variável Global
+
+## Variável por parâmetro
+
+## Instanciação usando uma IIFE
+
+```
+
+## Envio
 
 1. Fork [esse repositório](https://github.com/Webschool-io/be-mean-instagram-artigos/) 
 2. Nomeie seu artigo usando o seguinte padrão: artigo-instanciacao-githubuser-nome-completo.md
 3. Adicione seu exercício aqui na Pasta Variables
 4. Faça um Pull Request enviando seu artigo.
+
+
