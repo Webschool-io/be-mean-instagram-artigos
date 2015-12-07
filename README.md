@@ -1,7 +1,29 @@
-# Artigo
+# Artigo 2
+**Autor**: Nome Completo - [githubuser](link pro perfil)
+**Data**: // execute o Date.now() e coloque o timestamp aqui
+
+Explique como funciona o Garbage Collector no JavaScript e como é a execução de funções e armazenamento de variáveis com JavaScript.
+
+## Considerações
+
+Quanto mais explicado melhor.
+
+Lembre que isso fará parte do seu currículo como aluno e será disponilizado no sistema de vagas, ou seja, o contratante poderá ver todos seus projetos e trabalhos feitos nesse curso.
+
+Boa sorte.
+
+# Envio
+
+1. Fork [esse repositório](https://github.com/Webschool-io/be-mean-instagram-artigos/) 
+2. Nomeie seu artigo usando o seguinte padrão: artigo-garbage-collector-githubuser-nome-completo.md
+3. Adicione seu exercício aqui na Pasta Gabage Collector
+4. Faça um Pull Request enviando seu artigo.
+
+
+# Artigo 1
 **autor**: Suissa
 
-**Prazo**: **até dia 23 de Novembro de 2015 [PRAZO EXTENDIDO]**
+**Prazo**: **SEM PRAZO**
 
 Explique, com teoria e código, nesse artigo como o JavaScript cria e instancia as variáveis, seguindo os seguintes tópicos.
 
@@ -42,4 +64,4 @@ Boa sorte.
 1. Fork [esse repositório](https://github.com/Webschool-io/be-mean-instagram-artigos/) 
 2. Nomeie seu artigo usando o seguinte padrão: artigo-instanciacao-githubuser-nome-completo.md
 3. Adicione seu exercício aqui na Pasta Variables
-4. Faça um Pull Requst enviando seu artigo.
+4. Faça um Pull Request enviando seu artigo.
