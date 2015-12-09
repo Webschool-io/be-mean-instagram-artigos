@@ -14,19 +14,15 @@ Brincadeiras a parte, no exemplo citado podemos observar que "liberamos espaço 
 
 # Exemplo de Garbage Collector em Javascript
 
-{% highlight javascript %}
 var beMean = new String("Javascript é toooop...");
+
 document.write( beMean );
-{% endhighlight %}
 
 Vejamos o que estamos fazendo... Primeiro declarei uma variável contendo um texto e exibi no navegador. Daí surge a questão, não irei precisar utilizar mais esta variável ainda assim ela continuará lá ocupando memória. 
 
 Podemos resolver este problema utilizando o Garbage Collector da seguinte forma:
 
-{% highlight javascript %}
 beMean = null;
-{% endhighlight %}
-
 
 O seu navegador se encarrega de fazer a limpeza para você, isso ocorre automaticamente liberando assim a memória.
 
@@ -37,14 +33,15 @@ Simples o Javascript não adivinha quando você não esta utilizando um objeto, 
 
 Quando utilizamos funções em Javascript qualquer variável criada dentro da função já fica disponivel para a coleta do lixo. Podemos observar neste exemplo.
 
-{% highlight javascript %}
 function exibeTexto(){
-    var beMean = new String("Javascript é toooop...");
-    document.write( beMean );
-}
-exibeTexto();
-{% endhighlight %}
 
+    var beMean = new String("Javascript é toooop...");
+
+    document.write( beMean );
+
+}
+
+exibeTexto();
 
 Este exemplo resume o que fizemos no exemplo anterior, porém utilizando uma função. Porém nao podemos declarar como null agora. Por que não??? Simples, devido as funções são criadas e executadas apenas uma vez. Depois disso ela não precisa mais existir. Dessa forma todas as variáveis e objetos são definidos com null automaticamente para você e ficam disponíveis para a coleta do lixo.
 
