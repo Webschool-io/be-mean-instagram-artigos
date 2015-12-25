@@ -42,7 +42,7 @@ Dado a explicação referente a escopo. Vejamos o código a seguir:
 			return x + y;
 		};
 ```
-Segundo (ZAKAS, 2014),  só e possível compilarmos o código acima devido a engine  do JavaScript efetuar o **hoisting**, ou seja, a função add que está sendo chamada pela variável soma e carregada no topo e em seguida executa o código, como se o mesmo tivesse sido escrito da seguinte forma.
+Segundo (ZAKAS, 2014),  só e possível compilarmos o código acima devido a engine do JavaScript efetuar o **hoisting**, ou seja, a função add que está sendo chamada pela variável soma e carregada no topo e em seguida executa o código, como se o mesmo tivesse sido escrito da seguinte forma.
 
 ```js
 	
@@ -79,10 +79,22 @@ Mesmo sendo possivel a declaração de variavies em diversões "ordens", por pad
               z = 2;
               
               function calc(x,y,z){
-              		var a;
+              		var a,b;
               		a = 10;
+              		b = 15
               		
-              		return a + x + y + z;
+              		return a + b + x + y + z;
               }
               
 ```
+
+## 2. Closure
+
+Antes de falarmos de closure, iremos consolida o conceito de **escopo estático**.
+
+##### 2.1 Escopo Estático
+
+“... O escopo estático e chamado assim porque o escopo de uma variável pode ser determinado estaticamente – ou seja, antes da execução. Isso permite a um leitor de programas humano (e um compilador) determinar o tipo de cada variável. “ (SEBESTA, 2011)
+
+“... Devido ao escopo estático ser baseado na estrutura gramatical de um programa, é às vezes chamado **de escopo léxico** ...” (TUCKER e NOONAN, 2009)
+
