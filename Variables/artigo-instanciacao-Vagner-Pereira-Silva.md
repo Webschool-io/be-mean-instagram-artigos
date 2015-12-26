@@ -124,5 +124,82 @@ Exemplo:
 (BENEDETTI e CRANLEY, 2013) definem closure dos seguintes modos:
 
 * Um closure é a variável local para uma função, mantida viva depois que a função foi retornada.
-* Sempre que vir a palavra-chave function dentro de outra função, a função interna possui acesso às variáveis na função externa.
+* Sempre que vir a palavra-chave function dentro de outra função, a função interna possui acesso às variáveis externas.
+
+Exemplo:
+```js
+var x  = 10;
+ 	function calc(){  
+ 		
+ 		var y = x;
+
+ 		return function (){ // função anônima
+
+ 			return x + y; // variáveis declarada fora da função
+
+ 		} ();
+
+ }
+calc();
+
+```
+
+Com o exemplo acima podemos dizer que, todas as vezes que uma função for declarada no bloco ({}) de outra função e utilizarmos as variáveis ou objetos dessa função externa, a essas funções damos o nome de closure.
+Um bom exemplo da utilização de closure e na utilização de callback.
+```js
+var informacao; 
+
+ function log(msg) {
+
+    var info = function () {
+        alert(msg);
+
+    };
+    
+    return info;
+};
+
+informacao = log("Estou utilizando Closure");
+
+setTimeout(error, 3000);  // 3 segundos
+```
+
+Variável Global
+
+Como citado anteriormente, no capitulo 1, variável global, como o próprio texto sugeri, e a variável na qual podemos obter acesso em qualquer parte do código. Normalmente e por padrão, declaradas no início do documento.
+
+```js
+	var a,b,c,d; // variáveis globais
+	
+	a = 1;
+	b = a;
+
+	function e(x){
+		var b = 0;
+		c = 2;
+
+		return b + c;
+	}
+
+	d = e(b);
+```
+
+Acima vemos, claramente, o comportamento de uma variável global. Porém, e importante temos em mente, que, ao utilizarmos variáveis com o a mesma nomenclatura de uma variável global no corpo de uma função, faz com que a variável utilizada localmente “sobrescreva” o conteúdo da variável global, dentro de sua estrutura.
+
+```js
+var a, b;
+	
+	a = 1;
+
+	function exemplo(){
+
+		var a  = 0;
+
+		return a;
+
+	}
+
+	b = exemplo ();
+	alert(“a =” + b)  // a será igual a 0
+``` 
 
