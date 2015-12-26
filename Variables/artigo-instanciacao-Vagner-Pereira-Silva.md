@@ -98,3 +98,31 @@ Antes de falarmos de closure, iremos consolida o conceito de **escopo estático*
 
 “... Devido ao escopo estático ser baseado na estrutura gramatical de um programa, é às vezes chamado **de escopo léxico** ...” (TUCKER e NOONAN, 2009)
 
+Segundo (LEMAY e CADENHEAD, 2005)  se declaramos uma variável em um bloco, ela só será visível e utilizável apenas por esse bloco, ou seja, quando o bloco acaba de ser executado todas as variáveis declaradas nele desaparecem. 
+Com isso no escopo estático (ou léxico) podemos dizer que em uma estrutura aninhada os blocos internos, tem acesso as variáveis do(s) bloco(s) externo(s). 
+Exemplo:
+
+```js
+	var x = 10; // variavel global.
+
+		soma = function(){ // bloco externo.
+
+			var y = x;
+
+			 return function (){ // bloco interno.
+
+				var z = y; // variavel local sendo inicializada com a variavel do bloco externo.
+
+				return x + y + z;
+
+			};
+
+	}
+```
+##### 2.2 Definindo Closure
+
+(BENEDETTI e CRANLEY, 2013) definem closure dos seguintes modos:
+
+* Um closure é a variável local para uma função, mantida viva depois que a função foi retornada.
+* Sempre que vir a palavra-chave function dentro de outra função, a função interna possui acesso às variáveis na função externa.
+
