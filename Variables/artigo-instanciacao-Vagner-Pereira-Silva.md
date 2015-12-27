@@ -175,8 +175,8 @@ Como citado anteriormente, no capitulo 1, variável global, como o próprio text
 	b = a;
 
 	function e(x){
-		var b = 0;
-		c = 2;
+	
+		c = x;
 
 		return b + c;
 	}
@@ -184,7 +184,9 @@ Como citado anteriormente, no capitulo 1, variável global, como o próprio text
 	d = e(b);
 ```
 
-Acima vemos, claramente, o comportamento de uma variável global. Porém, e importante temos em mente, que, ao utilizarmos variáveis com o a mesma nomenclatura de uma variável global no corpo de uma função, faz com que a variável utilizada localmente “sobrescreva” o conteúdo da variável global, dentro de sua estrutura.
+Acima vemos, claramente, o comportamento de uma variável global, onde o valor da variável **b** e utilizada dentro da função **e**.
+
+Porém, e importante temos em mente, que, ao utilizarmos variáveis com o a mesma nomenclatura de uma variável global no corpo de uma função, faz com que a variável utilizada localmente “sobrescreva” o conteúdo da variável global, apenas dentro de sua estrutura e  mantendo a variavel global com seu valor de inicialização, por assim dizer.
 
 ```js
 var a, b;
@@ -199,7 +201,57 @@ var a, b;
 
 	}
 
-	b = exemplo ();
-	alert(“a =” + b)  // a será igual a 0
+	b = exemplo (); // retorna a variável a dentro da função e.
+	alert("a será igual a " + b)  // a será igual a 0.
+	
+	b = a; // varialve a global.
+	alert("a será igual a " + b)  // a será igual a 1
+	
 ``` 
 
+## Variável por parâmetro
+
+Algumas vezes há a necessidade de passar argumentos para uma função, essa atribuição de dados na função e efetuada através de parâmetros, onde podemos ter n parâmetros atribuídos e para cada atribuição devemos efetuar a separação por virgula (,).
+
+Exemplo de uma função com parâmetro:
+```js
+		function(parametro1, parametro2){}
+```
+No javascript a atribuição de um argumento a uma função com parâmetro e opcional, ou seja, não retorna erro ao invocarmos tal função sem passarmos argumentos a ela, mas e importante ressaltar, que, a não atribuição de valor a um parâmetro e tratado pelo javascript como **undefined** e com isso, de acordo com a necessidade, somos obrigados a efetuar a tratativa desse parâmetro.
+ ```js
+// considerando que o parâmetro y e opcional.
+	var soma  = function(x, y){
+
+
+		//  === corresponde a exatamente igual ao valor e tipo.
+		if(y === undefined) {  //se y for exatametente igual a undefined atribuir 0.
+
+			y  =  0;
+
+		};
+			return x + y; // Caso o parâmetro  não fosse tratado teriamos 
+				      // como retorno  NaN = Not a Numbuer (não é um número))
+			              // indicando que os tipos não são iguais.
+	}
+
+	alert(soma(10));
+```
+
+Segundo (LEITE, 2006) quando atribuímos valor a um parâmetro na verdade o que estamos passando e a “cópia” do valor dessa variável e a ligação ente as duas pode ser considerada fraca. Com isso, a função que está sendo chamada pode altera o valor do parâmetro dentro do seu corpo, mas a alteração efetuada nesse valor não altera o valor da rotina chamadora. 
+Dessa forma podemos dizer que ao passarmos uma variável global como argumento de uma função com parâmetro, não e alteramos seu valor.
+
+```js
+		var  x,soma // variavies global
+		x = 10;
+
+		soma = function(x,y){
+
+			x = x + y;
+
+			return x; // x  =  20
+		}
+
+		alert(soma(x,10));
+
+		alert(x) //  retorno da varial global = 10
+```
