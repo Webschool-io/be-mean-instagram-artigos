@@ -164,7 +164,7 @@ informacao = log("Estou utilizando Closure");
 setTimeout(error, 3000);  // 3 segundos
 ```
 
-Variável Global
+## 3. Variável Global
 
 Como citado anteriormente, no capitulo 1, variável global, como o próprio texto sugeri, e a variável na qual podemos obter acesso em qualquer parte do código. Normalmente e por padrão, declaradas no início do documento.
 
@@ -209,7 +209,7 @@ var a, b;
 	
 ``` 
 
-## Variável por parâmetro
+## 4. Variável por parâmetro
 
 Algumas vezes há a necessidade de passar argumentos para uma função, essa atribuição de dados na função e efetuada através de parâmetros, onde podemos ter n parâmetros atribuídos e para cada atribuição devemos efetuar a separação por virgula (,).
 
@@ -238,7 +238,7 @@ No javascript a atribuição de um argumento a uma função com parâmetro e opc
 ```
 
 Segundo (LEITE, 2006) quando atribuímos valor a um parâmetro na verdade o que estamos passando e a “cópia” do valor dessa variável e a ligação ente as duas pode ser considerada fraca. Com isso, a função que está sendo chamada pode altera o valor do parâmetro dentro do seu corpo, mas a alteração efetuada nesse valor não altera o valor da rotina chamadora. 
-Dessa forma podemos dizer que ao passarmos uma variável global como argumento de uma função com parâmetro, não e alteramos seu valor.
+Dessa forma podemos dizer que ao passarmos uma variável global como argumento de uma função com parâmetro, não e alterado seu valor.
 
 ```js
 		var  x,soma // variavies global
@@ -255,3 +255,21 @@ Dessa forma podemos dizer que ao passarmos uma variável global como argumento d
 
 		alert(x) //  retorno da varial global = 10
 ```
+
+## 5. Instanciando Usando Uma IIFE (Expressão de Função Imediatamente Invocada)
+
+“Uma IIFE é uma expressão de função definida e chamada imediatamente para gera um resultado. Essa expressão de função pode conter qualquer número de variáveis locais que não sejam acessíveis de fora dessa função” (ZAKAS, 2014)
+Ou seja, com isso podemos evitar conflitos com variáveis e função do espoco global, ou, até mesmo, com conteúdo de terceiros.
+
+Estrutura IIFE:
+```js
+(  // () faz com que a função se torne um expressão
+	// para que assim possa ser invocada.
+	function(){}
+
+	() // invoca a função
+
+	);
+
+```
+
