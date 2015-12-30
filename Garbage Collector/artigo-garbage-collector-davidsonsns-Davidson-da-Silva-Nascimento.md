@@ -5,7 +5,7 @@
 
 ## Afinal, o que é esse tal "Garbage Collector"?
 
-![alt text](http://www.portmoody.ca/modules/showimage.aspx?imageid=798)
+![Imagem](http://www.portmoody.ca/modules/showimage.aspx?imageid=798)
 
 **Garbage Collector**Collector**(GC) significa ***"Coletor de Lixo"***, e ele realmente cumpre o que o nome já descreve. Esse cara procura por regiões de memória que não são mais utilizadas pela aplicação e devolve os recursos ao sistema operacional. É um processo usado para a automação do [gerenciamento de memória](https://goo.gl/9pla0h).
 
