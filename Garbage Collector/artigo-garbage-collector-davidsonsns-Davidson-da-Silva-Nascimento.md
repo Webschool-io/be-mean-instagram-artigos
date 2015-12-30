@@ -5,7 +5,7 @@
 
 ## Afinal, o que é esse tal "Garbage Collector"?
 
-![alt text](http://www.portmoody.ca/modules/showimage.aspx?imageid=798 "Garbage Collector")
+![alt text](http://www.portmoody.ca/modules/showimage.aspx?imageid=798)
 
 **Garbage Collector**Collector**(GC) significa ***"Coletor de Lixo"***, e ele realmente cumpre o que o nome já descreve. Esse cara procura por regiões de memória que não são mais utilizadas pela aplicação e devolve os recursos ao sistema operacional. É um processo usado para a automação do [gerenciamento de memória](https://goo.gl/9pla0h).
 
@@ -45,7 +45,9 @@ var temp = variavel.toUpperCase(); // (2)
 variavel = temp; // (3)
 ```
 (1) - aloca memória para uma `string`
+
 (2) - cria uma nova string
+
 (3) - sobrescreve a referência da string original
 
 Após esse código ser executado, a sequência original "beMean" não é mais alcançável. O sistema detecta esse fato e libera seu espaço de armazenamento na memória para reutilização.
@@ -62,6 +64,7 @@ document.body.innerHTML = '' // (1)
 menu = new Menu('His menu') // (2)
 ```
 (1) - `body.innerHTML` é limpo. Então, tecnicamente, seus **"filhos"** são removidos, porque eles não são acessíveis mais. Mas o elemento `#id` é uma exceção. É acessível como `menu.elem`, assim que permanecer na memória. Se verificado, utilizando `parentNode`, ele é `null`.
+
 (2) - `window.menu` é reatribuído, e o `menu` antigo torna-se inacessível e é automaticamente removido pelo **Garbage Collector **.
 > Elementos **DOM** individuais podem permanecer na memória mesmo quando o pai é limpo
 
@@ -88,5 +91,7 @@ Dois objetos são criados, um referenciando ao outro, formando o ciclo. O algori
 
 ## Referências
 [JavaScript The Definitive Guide](http://docstore.mik.ua/orelly/webprog/jscript/index.htm)
+
 [JavaScript Tutorial ­ Memory leaks](http://javascript.info/tutorial/memory-leaks)
+
 [Gerenciamento de Memória](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Memory_Management)
