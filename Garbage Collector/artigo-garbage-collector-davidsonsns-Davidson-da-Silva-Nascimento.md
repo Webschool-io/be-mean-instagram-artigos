@@ -7,9 +7,9 @@
 
 ![Imagem](http://front.saiadolugar.com.br/arquivos/2013/04/captain-planet.jpg)
 
-Vai planeta! Errou feio, não tem nada haver com o Captão Planeta e sua turma de anéis.
+**Vai planeta!** Errou feio, não tem nada haver com o Capitão Planeta e sua turma de anéis.
 
-**Garbage Collector**Collector**(GC) significa ***"Coletor de Lixo"***, e ele realmente cumpre o que o nome já descreve. Esse cara procura por regiões de memória que não são mais utilizadas pela aplicação e devolve os recursos ao sistema operacional. É um processo usado para a automação do [gerenciamento de memória](https://goo.gl/9pla0h).
+**Garbage Collector**Collector**(GC) significa **"Coletor de Lixo"**, e ele realmente cumpre o que o nome já descreve. Esse cara procura por regiões de memória que não são mais utilizadas pela aplicação e devolve os recursos ao sistema operacional. É um processo usado para a automação do [gerenciamento de memória](https://goo.gl/9pla0h).
 
 Permitindo assim que outros programas possam usar a memória disponível, ou mesmo a aplicação em que foi coletado o **"lixo"**.
 
