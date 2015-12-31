@@ -319,3 +319,16 @@ Ao executar o código acima, será adiciona dos novos métodos públicos ( Pesso
 Todos os conceitos vistos neste artigo, estão ligados entre si e claramente vemos isso. Mas do que isso, são conceitos bastantes básicos, mas de suma importância no desenvolvimento.
 Tê-los em mente, e bem definidos seus conceitos, contribui muito em soluções de problemas, assim como, em evita-los. Saber o que é e de que forma podemos manipular um escopo no javascript e fundamental. Ter claro a ideia de escopo global e local faz muita diferença na implementação de códigos coesos, assim, como a manipulação de variáveis, objetos e funções. 
 Saber que através do conceito de closure podemos isolar um trecho do nosso código, não permitindo que variáveis possam ser alteradas externamente, tal como, a utilização da inovação de uma função de forma imediata através da expressão IIFE, consolida ainda mais o conceito de privacidade do conteúdo em relação a influência externa, ou seja, não permitindo alterações fora do escopo local. Faz com que possamos concluir que tais conceitos devem ser disseminados desde do contato iniciar com a linguagem, pois é peça fundamental para construção de códigos em javascript. 
+
+
+## Referências
+
+BENEDETTI, R.; CRANLEY, R. Objeto,objetos por todos lugar. In: BENEDETTI, R.; CRANLEY, R. Use a Cabeça! JQuery. 1. ed. [S.l.]: Alta Books, 2013. Cap. 11, p. 458.
+LEITE, M. Programação Estruturada e Modular. In: LEITE, M. Técnicas de Programação - Uma Abordagem Moderna. 1. ed. Rio de Janeiro: Brasport, 2006. Cap. 7, p. 148-160.
+LEMAY, L.; CADENHEAD, R. Lista, Lógicas e Loops. In: LEMAY, L.; CADENHEAD, R. APRENDA EM 21 DIAS JAVA 2 - TRADUÇÃO DA 4a ED. 4. ed. Rio de Janeiro: Elsevier, 2005. p. 70.
+SEBESTA, R. W. In: SEBESTA, R. W. Conceitos de Linguagens de Programação. 9. ed. [S.l.]: Bookman, 2011. Cap. 5, p. 245.
+TUCKER, A.; NOONAN, R. Nomes. In: TUCKER, A.; NOONAN, R. Linguagens de Programação - 2.ed.: Princípios e Paradigmas. São Paulo: AMGH, 2009. p. 89.
+ZAKAS, N. C. Funções. In: ZAKAS, N. C. Príncipios de Orientação a Objetos em JavaScript. [S.l.]: Novatec, 2014. Cap. 2, p. 39.
+ZAKAS, N. C. Herança. In: ZAKAS, N. C. Princípios de Orientação a Objetos em JavaScript. São Paulo: Novatec, 2014. Cap. 5, p. 101.
+
+
