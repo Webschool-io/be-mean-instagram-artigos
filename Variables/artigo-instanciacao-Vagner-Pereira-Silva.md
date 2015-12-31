@@ -1,5 +1,6 @@
 #Instanciação de Variáveis no Javascript
  > **Autor:** Vagner Pereira Silva
+ 
  > **Data:** 31/12/2015
  
 ## Resumo
