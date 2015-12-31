@@ -259,13 +259,17 @@ Estrutura IIFE:
 
 ```
 Variações que podem ser utilizadas
+
 ```js
+
 !function(){}();
 +function(){}();
 ~function(){}();
--function(){}();```
+-function(){}();
 
-O IIFE facilita o trabalho e é amplamente utilizado, pois podemos definir melhor com quais objetos do escopo global iremos interagir, evitando muita dor de cabeça (conflitos). Para isso, passamos as variáveis globais atrás de parâmetro.
+```
+
+O IIFE facilita o trabalho e é amplamente utilizado, pois podemos definir melhor com quais objetos do escopo global iremos interagir, evitando muita dor de cabeça (conflitos). Para isso, passamos as variáveis globais atravéz de parâmetro.
 
 ```js
 (
@@ -295,5 +299,7 @@ var Pessoa = (function () {
 
 Pessoa.setNome("Vagner"); 
 Pessoa.getNome();
+
 ```
-Ao executar o código acima, será adiciona dos novos métodos públicos ( Pessoa.setNome e Pessoa.getNome) , porém todo conteúdo desses dois novos métodos serão mantido privados. Com isso não teremos problemas se terceiros utilizarem por exemplo a variável nome em seu escopo, pois qualquer alteração feita por conteúdo de terceiros ou nossa no escopo global não terá nem um efeito.
+Ao executar o código acima, será adiciona dos novos métodos públicos ( Pessoa.setNome e Pessoa.getNome) , porém todo conteúdo desses dois novos métodos serão mantido privados. Com isso não teremos problemas se terceiros utilizarem por exemplo a variável nome em seu escopo, pois qualquer alteração feita por conteúdo de terceiros ou nossa no escopo global não terá nem um efeito. E essa e uma das vantagens de se utilizar o padrão IIFE.
+
