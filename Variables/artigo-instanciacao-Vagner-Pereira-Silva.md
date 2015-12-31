@@ -7,67 +7,52 @@
 
 ## 1. Hoisting
 
-Antes de denominarmos o conceito de **hoisting**, em JavaScript, iremos primeiramente aborda o conceito de escopo.
+   Antes de entendermos o conceito de **hoisting**, em JavaScript, iremos primeiramente aborda o conceito de escopo.
+>“... O escopo refere-se ao local onde os objetos, as variáveis e as funções são **criadas e acessíveis** e em que **contexto** estão sendo chamadas. Basicamente, os objetos, as variáveis e as funções pode ser definida em um espoco **local** ou **global**.” (BENEDETTI e CRANLEY, 2013)
 
-“... O escopo refere-se ao local onde os objetos, as variáveis e as funções são **criadas e acessíveis** e em que **contexto** estão sendo chamadas. Basicamente, os objetos, as variáveis e as funções pode ser definida em um espoco **local** ou **global**.” (BENEDETTI e CRANLEY, 2013)
 
 Escopo local abrange apenas um trecho do código, um bloco de execução especifico, por assim dizer. De forma mais sucinta, são delimitadas dentro de funções, por exemplo;
-
 ```js
-	var n1 = 5;
-		function calc(){
-			var n1 = 10;
-			return n1 + n1;
-		};
-	console.log(calc());
+var n1 = 5;
+function calc(){
+var n1 = 10;
+return n1 + n1;
+};
+console.log(calc());
 ```
-	
 Com o código acima, temos como resultado o valor 20, pois a declaração da variável n1 **dentro do espoco calc** (função), restringi o seu uso apenas dentro do seu bloco de execução, iniciado e terminado por chaves {}.
-Já o escopo global e acessível em qualquer lugar no código, sendo declarado no corpo do documento.
+Já o escopo global e acessível em qualquer lugar no código.
 
 ```js
-	var n1 = 5;
-		function calc(){
-			return n1 + n1;
-		};
-	console.log(calc());
-
+var n1 = 5;
+function calc(){
+return n1 + n1;
+};
+console.log(calc());
 ```
 
 Dado a explicação referente a escopo. Vejamos o código a seguir:
 
 ```js
-	var  soma = add(1,2);
+	add(1,2);
 		function add(x, y){
 			return x + y;
-		};
+};
 ```
-Segundo (ZAKAS, 2014),  só e possível compilarmos o código acima devido a engine do JavaScript efetuar o **hoisting**, ou seja, a função add que está sendo chamada pela variável soma e carregada no topo e em seguida executa o código, como se o mesmo tivesse sido escrito da seguinte forma.
 
+Segundo (ZAKAS, 2014),  só e possível compilarmos o código acima devido a engine  do JavaScript efetuar o **hoisting**, ou seja, a função add que está sendo chamada e carregada no topo e em seguida executa o código, como se o mesmo tivesse sido escrito da seguinte forma.
 ```js
 	
 	function add(x, y){
 		return x + y;
-	};
-        var  soma = add(1,2);
+};
+              add(1,2);
 ```
 
 Ainda, segundo (ZAKAS, 2014)  o hoisting de funções ocorre somente em declarações de funções porque o nome da função é previamente conhecido. 
 Já expressões de função, não podem sofre hoisting devido as funções serem referenciadas somente por meio de uma variável.
-Logo o seguindo trecho de código nos retornará erro.
-
-```js
-	//Erro - Uncaught TypeError: add is not a function(…)
-
-             var  soma = add(1,2);
-              
-             var add  = function(x, y){
-				return x + y;
-			};
-```
-
 O termo hoisting, dá-nos a possibilidade de declararmos uma variável sem necessidade de inicializarmos de forma imediata.
-Mesmo sendo possivel a declaração de variavies em diversões "ordens", por padrão as variaveis devem ser declaradas no ínicio do seu escopo
+Mesmo sendo possível a declaração de variáveis em diversões "ordens", por padrão as variáveis devem ser declaradas no início do seu escopo
 
 ```js
 	//Pradrão
@@ -87,6 +72,7 @@ Mesmo sendo possivel a declaração de variavies em diversões "ordens", por pad
               }
               
 ```
+
 
 ## 2. Closure
 
@@ -121,7 +107,7 @@ Exemplo:
 ```
 ##### 2.2 Definindo Closure
 
-(BENEDETTI e CRANLEY, 2013) definem closure dos seguintes modos:
+(BENEDETTI e CRANLEY, 2013) definem closure do seguinte modo:
 
 * Um closure é a variável local para uma função, mantida viva depois que a função foi retornada.
 * Sempre que vir a palavra-chave function dentro de outra função, a função interna possui acesso às variáveis externas.
@@ -166,7 +152,7 @@ setTimeout(error, 3000);  // 3 segundos
 
 ## 3. Variável Global
 
-Como citado anteriormente, no capitulo 1, variável global, como o próprio texto sugeri, e a variável na qual podemos obter acesso em qualquer parte do código. Normalmente e por padrão, declaradas no início do documento.
+Como citado anteriormente, no capitulo 1 (Hoisting) , variável global, como o próprio texto sugeri, e a variável na qual podemos obter acesso em qualquer parte do código. Normalmente e por padrão, declaradas no início do documento.
 
 ```js
 	var a,b,c,d; // variáveis globais
@@ -256,10 +242,11 @@ Dessa forma podemos dizer que ao passarmos uma variável global como argumento d
 		alert(x) //  retorno da varial global = 10
 ```
 
-## 5. Instanciando Usando Uma IIFE (Expressão de Função Imediatamente Invocada)
+## 5. Instanciando Usando Uma IIFE (Immediately Invoked Function Expression)
 
 “Uma IIFE é uma expressão de função definida e chamada imediatamente para gera um resultado. Essa expressão de função pode conter qualquer número de variáveis locais que não sejam acessíveis de fora dessa função” (ZAKAS, 2014)
-Ou seja, com isso podemos evitar conflitos com variáveis e função do espoco global, ou, até mesmo, com conteúdo de terceiros.
+Ou seja, com isso podemos evitar conflitos com variáveis e função do espoco global, ou, até mesmo, com conteúdo de terceiros. A grosso modo IIFE encapsula, tornando privado o conteúdo do seu escopo.
+
 
 Estrutura IIFE:
 ```js
@@ -272,4 +259,18 @@ Estrutura IIFE:
 	);
 
 ```
+Outras formas utilizadas
+```js
+!function(){}();
++function(){}();
+~function(){}();
+-function(){}(); 
+```
 
+
+
+Hoje e bastante comum vermos o padrão IIFE ser atrelado a uma variável 
+
+```js 
+var iife = (function(){}()); 
+```
