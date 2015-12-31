@@ -55,7 +55,7 @@ O termo hoisting, dá-nos a possibilidade de declararmos uma variável sem neces
 Mesmo sendo possível a declaração de variáveis em diversões "ordens", por padrão as variáveis devem ser declaradas no início do seu escopo
 
 ```js
-	//Pradrão
+	//Padrão
 
              var  x,y,z;
               
@@ -247,10 +247,9 @@ Dessa forma podemos dizer que ao passarmos uma variável global como argumento d
 “Uma IIFE é uma expressão de função definida e chamada imediatamente para gera um resultado. Essa expressão de função pode conter qualquer número de variáveis locais que não sejam acessíveis de fora dessa função” (ZAKAS, 2014)
 Ou seja, com isso podemos evitar conflitos com variáveis e função do espoco global, ou, até mesmo, com conteúdo de terceiros. A grosso modo IIFE encapsula, tornando privado o conteúdo do seu escopo.
 
-
 Estrutura IIFE:
 ```js
-(  // () faz com que a função se torne um expressão
+;(  // () faz com que a função se torne um expressão
 	// para que assim possa ser invocada.
 	function(){}
 
@@ -259,18 +258,42 @@ Estrutura IIFE:
 	);
 
 ```
-Outras formas utilizadas
+Variações que podem ser utilizadas
 ```js
 !function(){}();
 +function(){}();
 ~function(){}();
--function(){}(); 
+-function(){}();```
+
+O IIFE facilita o trabalho e é amplamente utilizado, pois podemos definir melhor com quais objetos do escopo global iremos interagir, evitando muita dor de cabeça (conflitos). Para isso, passamos as variáveis globais atrás de parâmetro.
+
+```js
+(
+function($){  /* código com acesso a variável global JQuery através do parâmetro $ */}
+(JQuery)
+);
 ```
 
+Também, há possibilidade de exportarmos objetos, para isso, retornamos funções
 
+```js
+var Pessoa = (function () {
+  var nome;
+  var setNome = function(Pnome) {
+    nome = Pnome;
+  };
+  var getNome = function() {
+    return nome;
+  };
 
-Hoje e bastante comum vermos o padrão IIFE ser atrelado a uma variável 
+  return {
 
-```js 
-var iife = (function(){}()); 
+    setNome: setNome,
+    getNome: getNome
+  };
+}());
+
+Pessoa.setNome("Vagner"); 
+Pessoa.getNome();
 ```
+Ao executar o código acima, será adiciona dos novos métodos públicos ( Pessoa.setNome e Pessoa.getNome) , porém todo conteúdo desses dois novos métodos serão mantido privados. Com isso não teremos problemas se terceiros utilizarem por exemplo a variável nome em seu escopo, pois qualquer alteração feita por conteúdo de terceiros ou nossa no escopo global não terá nem um efeito.
