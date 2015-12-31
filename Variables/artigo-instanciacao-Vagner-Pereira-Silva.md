@@ -1,9 +1,20 @@
 #Instanciação de Variáveis no Javascript
  > **Autor:** Vagner Pereira Silva
- 
- > **Data:** 24/12/2016
+ > **Data:** 31/12/2015
  
 ## Resumo
+
+A seguir veremos um pouco de alguns conceitos bastante importante no universo JavaScript. Veremos a importância de se entender melhor o conceito de escopo e como podemos manipulá-lo a nosso favor , evitando assim dores de cabeça, pelo simples fato de desconhecer básico desses conceitos.
+
+ **Palavras-Chave: Hoisting, escopo, variável global, variável local, função, IIFE, Invocação imediata, parâmetro**
+
+## Abstract
+
+The following are some very important concepts in JavaScript universe. We will see the importance of a better understanding of the concept of scope and how we can manipulate it to our benefit, avoiding headaches, simply for lack of knowledge of these concepts
+
+
+**Keywords: Hoisting, scope , global variable , local variable , Function , IIEF , invocation Immediate , parameter**
+
 
 ## 1. Hoisting
 
@@ -301,5 +312,9 @@ Pessoa.setNome("Vagner");
 Pessoa.getNome();
 
 ```
-Ao executar o código acima, será adiciona dos novos métodos públicos ( Pessoa.setNome e Pessoa.getNome) , porém todo conteúdo desses dois novos métodos serão mantido privados. Com isso não teremos problemas se terceiros utilizarem por exemplo a variável nome em seu escopo, pois qualquer alteração feita por conteúdo de terceiros ou nossa no escopo global não terá nem um efeito. E essa e uma das vantagens de se utilizar o padrão IIFE.
+Ao executar o código acima, será adiciona dos novos métodos públicos ( Pessoa.setNome e Pessoa.getNome) , porém todo conteúdo desses dois novos métodos serão mantido privados. Com isso não teremos problemas se terceiros utilizarem por exemplo a variável nome em seu escopo, pois qualquer alteração feita por conteúdo de terceiros ou nossa no escopo global não terá nem um efeito no conteúdo interno da expressão IIFE.
 
+## Conclusão
+Todos os conceitos vistos neste artigo, estão ligados entre si e claramente vemos isso. Mas do que isso, são conceitos bastantes básicos, mas de suma importância no desenvolvimento.
+Tê-los em mente, e bem definidos seus conceitos, contribui muito em soluções de problemas, assim como, em evita-los. Saber o que é e de que forma podemos manipular um escopo no javascript e fundamental. Ter claro a ideia de escopo global e local faz muita diferença na implementação de códigos coesos, assim, como a manipulação de variáveis, objetos e funções. 
+Saber que através do conceito de closure podemos isolar um trecho do nosso código, não permitindo que variáveis possam ser alteradas externamente, tal como, a utilização da inovação de uma função de forma imediata através da expressão IIFE, consolida ainda mais o conceito de privacidade do conteúdo em relação a influência externa, ou seja, não permitindo alterações fora do escopo local. Faz com que possamos concluir que tais conceitos devem ser disseminados desde do contato iniciar com a linguagem, pois é peça fundamental para construção de códigos em javascript. 
