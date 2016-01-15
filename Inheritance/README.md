@@ -17,7 +17,9 @@ Use o o modelo que está entre ```.
 
 ```
 # Artigo - Garbage Collector
+
 **Autor**: Nome Completo - [githubuser](link pro perfil)
+
 **Data**: // execute o Date.now() e coloque o timestamp aqui
 
 Seu texto
@@ -27,7 +29,7 @@ Seu texto
 ## Envio
 
 1. Fork [esse repositório](https://github.com/Webschool-io/be-mean-instagram-artigos/) 
-2. Nomeie seu artigo usando o seguinte padrão: artigo-garbage-collector-githubuser-nome-completo.md
-3. Adicione seu exercício aqui na Pasta Gabage Collector
+2. Nomeie seu artigo usando o seguinte padrão: artigo-inheritance-githubuser-nome-completo.md
+3. Adicione seu exercício aqui na pasta Inheritance
 4. Faça um Pull Request enviando seu artigo.
 
