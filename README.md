@@ -29,8 +29,9 @@ Seu texto
 ## Envio
 
 1. Fork [esse repositório](https://github.com/Webschool-io/be-mean-instagram-artigos/)
-2. Nomeie seu artigo usando o seguinte padrão: artigo-garbage-collector-githubuser-nome-completo.md
-3. Adicione seu exercício aqui na Pasta Gabage Collector
+2. Nomeie seu artigo usando o seguinte padrão: artigo-inheritance-githubuser-nome-completo.md
+3. Adicione seu exercício aqui na Pasta Inheritance
+
 4. Faça um Pull Request enviando seu artigo.
 
 
