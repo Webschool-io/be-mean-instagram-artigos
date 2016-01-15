@@ -16,8 +16,10 @@ Boa sorte.
 Use o o modelo que está entre ```.
 
 ```
-# Artigo - Garbage Collector
+# Artigo - Herança
+
 **Autor**: Nome Completo - [githubuser](link pro perfil)
+
 **Data**: // execute o Date.now() e coloque o timestamp aqui
 
 Seu texto
