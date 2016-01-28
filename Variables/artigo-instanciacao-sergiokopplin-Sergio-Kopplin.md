@@ -1,6 +1,7 @@
 # Entendendo a criação e instanciação de variáveis no Javascript
 **Autor**: [Sérgio Kopplin](https://github.com/sergiokopplin)
 **Link Blog**: [Instanciação no JS](http://koppl.in/instanciacao-no-js/)
+**Data**: TUESDAY. JANUARY 26, 2016
 
 O JS é uma linguagem extremamente interessante e pode deixar os programadores caçando erros e bugs por conta de suas minúncias. Dentre elas, a declaração de variáveis.
 
