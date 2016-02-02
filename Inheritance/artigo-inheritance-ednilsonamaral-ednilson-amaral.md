@@ -1,79 +1,67 @@
 # Artigo - Herança  
 
 **Autor**: Ednilson Amaral - [ednilsonamaral](https://github.com/ednilsonamaral)  
-**Data**: 1453856004759
+**Data**: 1454434456574
 
 
 ## Decifrando Herança em JavaScript
 
 
-Para linguagens orientadas à objetos, como em C++ e Java, é utilizada um comportamento diferente para compartilhar código entre entidades. Sua herança nada mais é que a capacidade de suas classes em compartilharem seus métodos e atributos entre si. Um exemplo disso, é definir a relação de uma classe com outra através da palavra `extends`.  
+Para linguagens orientadas à objetos, como em C++ e Java, é utilizado um comportamento diferente para compartilhar código entre entidades. Sua herança nada mais é que a capacidade de suas classes em compartilharem seus métodos e atributos entre si. Um exemplo disso, é definir a relação de uma classe com outra através da palavra `extends`.  
 
-Agora, no JavaScript essa abordagem é um pouco diferente. Para compartilharmos código entre entidades devemos conhecer um pouco sobre orientção à protótipo.
+Agora, no JavaScript essa abordagem é um pouco diferente. Para compartilharmos código entre entidades devemos conhecer um pouco sobre protótipos.
 
 
 ### Protótipos  
 
-Bem como sabemos, um objeto é uma coleção dinâmica de chaves e valores, onde eles podem ser de qualquer tipo, e um protótipo que pode ser um objeto ou *null*. E, também sabemos, que todo objeto em JavaScript tem um protótipo.  
+Quase todos os objetos, além de sua lista de propriedades, possuem um *prototype*, ou **protótipo**.  
 
-Para herdarmos os métodos e atributos de um determinado objeto, utilizamos como protótipo do novo objeto a ser criado. Mesmo que nós não declaremos isso em nossos códigos, todos os objetos em JavaScript utilizam outro objeto como protótipo, exceto o objeto `Object`.
+Basicamente, um protótipo é outro objeto que é utilizado como fonte de *fallback* para as propriedades. Ou seja, assim que um objeto recebe uma chamada em determinada propriedade que ele não possui, seu *prototype* designado para aquela propriedade vai ser buscado, e, caso não encontre, irá buscar em outro, e assim por diante.  
+
+Porém, se nos depararmos com um objeto vazio, o seu protótpio é o ancestral de todos os protótpios, ou seja, a entidade por trás da maioria dos objetos, o *Object.prototype*.
+
+
+> As relações dos objetos JavaScript formam uma estrutura em forma de árvore, e na raiz dessa estrutura se encontra o Object.prototype. Ele fornece alguns métodos que estão presentes em todos os objetos, como o toString, que converte um objeto para uma representação em string.  
+>  
+> Muitos objetos não possuem o Object.prototype diretamente em seu prototype. Ao invés disso eles têm outro objeto que fornece suas propriedades padrão. Funções derivam do Function.prototype, e arrays derivam do Array.prototype.
+
+
+### Construtores  
+
+Podemos consedirar a maneira mais simples de criar objetos que vai herdar algum *prototype* é através de um construtor. Para isso, ao chamarmos uma função, basta à invocarmos com a palavra-chave `new`, fazendo assim que ela seja um construtor.
+
 
 ```js  
-var aluno = {  
-	serie: "1º Ano"  
+var Aluno = function (nome, idade) {  
+	this.nome = nome;  
+	this.idade = idade;  
 };  
 
-var bruna = {  
-	nome: "Bruna",  
-	idade: 7,  
-	__proto__: aluno  
-};  
+Aluno.prototype.serie = "1º Ano";  
 
-var jose = {  
-	nome: "José",  
-	idade: 6  
-};  
-
-Object.setPrototypeOf(jose, aluno);  
-
+//criando o objeto com o new  
+var bruna = new Aluno("Bruna", 7);  
 console.log(bruna);  
 console.log(bruna.serie);  
-
-console.log(jose);  
-console.log(jose.serie);  
 ```
 
-Note no exemplo acima, que herdamos métodos e atributos de outros objetos de duas formas. A primeira delas é utilizando a propriedade `__proto__` dentro do objeto `bruna`, então ele vai herdar do objeto `aluno` a série que ela se encontra.  
 
-Para o objeto `jose` herdamos os métodos e atributos através do objeto `Object.setPrototypeOf()`, que é o mais recomendado para utilizarmos.  
+O *prototype* de um construtor é o `Function.prototype`, onde sua propriedade *prototype* será o *prototype* de instâncias criadas através dele, porém não será seu próprio *prototype*. Enquanto outros objetos têm um *prototype* que pode ser obtido através do `Object.getPrototypeOf`.  
 
-Os resultados são os mesmos:  
+Vale ressaltar que devemos notar a diferença entrea a maneira que um *prototype* é associado a um construtor e a maneira que outros objetos têm um *prototype*.  
 
-```  
-$ node heranca.js  
-{ nome: 'Bruna', idade: 7 }  
-1º Ano  
-{ nome: 'José', idade: 6 }  
-1º Ano  
-```
-
-A propriedade `__proto__` não é padrão nos navegadores, então, pode muitas vezes não funcionar. Devido a isso que a propriedade `setPrototypeOf()` é mais recomendada.  
-
-Com esse pequeno código conseguimos ver uma cadeia de protótipos, ou seja um objeto vai herdar o protótipo de outro objeto e assim por diante. Agora fica uma dúvida, e se temos 20 alunos, qual o tamanho dessa cadeia de protótipos? E se forem 200? Como fica o desempenho de nossa aplicação? ):
+Além disso, nessa aborgadem de invocarmos o `new`, se não o invocarmos, o `this` dentro da função irá apenas se referenciar ao objeto global, assim podendo sobreescrever algumas variáveis que foram declaradas anteriormente.
 
 
-### Herança por Função Fábrica  
-
-E se eu não quiser ficar criando vários objetos e ficar herdando através de uma cadeia de protótipos, como nos exemplos acima, o que faço? Putz, vamos pensar...
-
+No exemplo a seguir, vemos mais uma possibilidade de herança:  
 
 ```js  
 var criaAluno = function (nome, idade) {  
-	return {  
-		nome: nome,  
-		idade: idade,  
-		serie: "1º Ano"  
-	};  
+    return {  
+        nome: nome,  
+        idade: idade,  
+        serie: "1º Ano"  
+    };  
 };  
 
 var bruna = criaAluno("Bruna", 7);  
@@ -81,26 +69,17 @@ var jose = criaAluno("José", 6);
 
 console.log(bruna);  
 console.log(jose);  
-```
-
-Simples? Acho que sim! Então, criamos uma função fábrica chamada `criaAluno()` que vai nos retornar um objeto, que nele irá conter os atributos que queremos, no caso, nome, idade e série. Então, ao invés de criamos um objeto para cada aluno, criamos uma variável chamando a função fábrica e atribuindo os valores.
-
 ```  
-$ node heranca.js  
-{ nome: 'Bruna', idade: 7, serie: '1º Ano' }  
-{ nome: 'José', idade: 6, serie: '1º Ano' }  
-```
+
+O exemplo acima demonstra, que, ao invés de criarmos um objeto para cada aluno, crio um único objeto, que irá retornar outro objeto, com os campos. Então, a cada novo aluno, basta chamarmos essa função e setarmos os valores dos campos.
 
 
-### Herança por Funções Construtoras  
-
-É o método mais difundido de criação de objetos e herança em JavaScript. Como sabemos, uma função também é um objeto, e por isso, ela possui a propriedade `prototype`, por padrão. Nela nós definimos o protótipo da função, ou então as propriedades que os objetos irão ter caso seja invocado via `new`.
-
+### Utilizando `call` e `apply`  
 
 ```js  
 var Aluno = function (nome, idade) {  
-	this.nome = nome;  
-	this.idade = idade;  
+    this.nome = nome;  
+    this.idade = idade;  
 };  
 
 Aluno.prototype.serie = "1º Ano";  
@@ -118,24 +97,12 @@ jose.__proto__ = Aluno.prototype;
 Aluno.call(jose, "José", 6);  
 //Aluno.apply(jose, ["José", 6]);  
 console.log(jose);  
-console.log(jose.serie);  
-```
-
-No exemplo acima temos os mesmos métodos e atributos vistos anteriormente. Porém, agora, utilizamos uma função construtora para herdamos nossos outros objetos e protótipos.  
-
-Note que para `bruna` invocamos `new`; enquanto `jose` criamos um objeto vazio, passamos como contexto e invocamos através de `call` ou `apply`. Os resultados são:
-
-
+console.log(jose.serie); 
 ```  
-$ node heranca.js  
-{ nome: 'Bruna', idade: 7 }  
-1º Ano  
-{ nome: 'José', idade: 6 }  
-1º Ano  
-```
 
+No exemplo acima temos os mesmos métodos e atributos vistos anteriormente. Porém, agora, utilizamos a função `Aluno` para herdamos nossos outros objetos e protótipos.
 
-Precisamos ressaltar que nessa aborgadem de invocarmos o `new`, se não o invocarmos, o `this` dentro da função irá apenas se referenciar ao objeto global, assim podendo sobreescrever algumas variáveis que foram declaradas anteriormente.
+Note que para `bruna` invocamos `new`; enquanto `jose` criamos um objeto vazio, passamos como contexto e invocamos através de `call` ou `apply`.
 
 
 ### Como fica a compatibilidade com os navegadores? (IE)  
@@ -157,6 +124,7 @@ Esse artigo é uma introdução à herança em JS, espero que tenha sido o mais 
 
 ### Fontes  
 
+[A vida secreta dos objetos - Eloquente JavaScript](https://github.com/braziljs/eloquente-javascript/blob/817711f1145f331ac7a5e08c4de1fa987b886a21/chapters/06-a-vida-secreta-dos-objetos.md)  
 [Desvendando a linguagem JavaScript - #15 - Herança - Parte 1 - Rodrigo Branas](https://www.youtube.com/watch?v=1Y0nSEMvTt0)  
 [Desvendando a linguagem JavaScript - #15 - Herança - Parte 2 - Rodrigo Branas](https://www.youtube.com/watch?v=hDhoO86cfh8)  
 [Herança em JavaScript parte I - Loop Infinito](http://loopinfinito.com.br/2012/05/04/heranca-em-javascript-parte-1/)  
