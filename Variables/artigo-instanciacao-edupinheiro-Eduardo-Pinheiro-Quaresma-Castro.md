@@ -160,12 +160,3 @@ var idade = (function(idade){
 ```
 
 Com IIFE's o código é modularizado, deixa tudo mais organizado, além de evitar poluimento de código.
-
-# Artigo - Instanciação
-**Autor**: Nome Completo - [githubuser](link pro perfil)
-**Data**: // execute o Date.now() e coloque o timestamp aqui
-
-Fork esse repositório
-Nomeie seu artigo usando o seguinte padrão: artigo-instanciacao-githubuser-nome-completo.md
-Adicione seu exercício aqui na Pasta Variables
-Faça um Pull Request enviando seu artigo.
