@@ -17,18 +17,18 @@ No Javascript as variáveis são declaradas em escopo [Hoisting](http://www.word
 // exemplo a
 // imprimi o erro dentro do `catch`
 try {
-  console.log(a)
+    console.log(a)
 } catch (e) {
-  console.error('A variável `a` não foi definida.')
+    console.error('A variável `a` não foi definida.')
 }
 
 // exemplo b
 // imprimi `undefined`
 try {
-  console.log(a)
-  var a = 2
+    console.log(a)
+    var a = 2
 } catch (e) {
-  console.error('A variável `a` não foi definida.')
+    console.error('A variável `a` não foi definida.')
 }
 {% endhighlight %}
 
@@ -64,11 +64,12 @@ Considere o seguinte exemplo, retirado do MDN:
 
 {% highlight js %}
 function makeFunc() {
-  var name = "Mozilla";
-  function displayName() {
-    alert(name);
-  }
-  return displayName;
+    var name = "Mozilla";
+    function displayName() {
+        alert(name);
+    }
+
+    return displayName;
 }
 
 var myFunc = makeFunc();
