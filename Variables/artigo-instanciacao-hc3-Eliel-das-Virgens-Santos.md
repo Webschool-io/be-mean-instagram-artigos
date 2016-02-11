@@ -18,6 +18,44 @@ console.log(global);
 mostraVariavel();
 ```
 
+esse exemplo é do livro Head First Javascript programmimg 
+
+```
+// essas são as variáveis globais [ avatar , skill , pointsPerLevel , usersPoints ]
+var avatar = "generic";
+var skill = 1.0;
+var pointsPerLevel = 1000;
+var usersPoints = 2008;
+
+function getAvatar(points) {
+	// level é uma variável local acessível apenas na função getAvatar
+	// pointsPerLevel é uma variável global que está sendo usada pela função mas seu valor não sera alterado
+	var level = points / pointsPerLevel;
+	
+	if(level == 0) {
+		return "Teddy bear";	
+	} else if (level == 1) {
+		return "Cat";
+	} else if (level >= 2) {
+		return "Gorilla";
+	}
+}
+
+function updatePoints(bonus,newPoints) {
+	
+	var i = 0;
+
+	while (i < bonus) {
+		newPoints = newPoints + skill * bonus;
+		i = i + 1;	
+	}
+	return newPoints + userPoints;
+}
+// aqui está a sacada , como as variáveis são globais elas são alteradas aqui e o valor irá permanecer alterado.
+userPoints = updatePoints(2,100);
+avatar = getAvatar(2112);
+```
+
 #HOISTING
 
 como já foi explicado o escopo, agora vamos para o hoisting que é um comportamento que serve tanto para funções como para variáveis, quando se declara uma variável em javascript ele vai para o topo do escopo, mas para as variáveis apenas sua declaração vai para o topo do escopo, sua
