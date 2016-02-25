@@ -10,6 +10,20 @@ Isso acontece porque o JavaScript não obriga você a declarar variáveis, permi
 
 Exemplo:
 
+``` js
+var number = 10;
+
+function init(){
+
+    console.log(number);
+    var number = 5;
+}
+
+init();
+
+```
+
+Por causa da forma como o JavaScript trata declarações e escopos, a saída deste script é undefined (!)
 
 ## Closure
 
