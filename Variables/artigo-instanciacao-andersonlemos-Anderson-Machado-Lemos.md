@@ -14,7 +14,6 @@ Exemplo:
 var number = 10;
 
 function init(){
-
     console.log(number);
     var number = 5;
 }
@@ -27,6 +26,20 @@ Por causa da forma como o JavaScript trata declarações e escopos, a saída des
 
 ## Closure
 
+Genericamente, a idéia central de uma closure é a de confinamento de uma função dentro da outra.
+
+Exemplo:
+
+``` js
+
+function funcaoExterna(){
+    alert("Função Externa");
+    function funcaoInterna(){
+        alert("Função Interna");
+    }
+}
+
+```
 
 ## Variável global
 
