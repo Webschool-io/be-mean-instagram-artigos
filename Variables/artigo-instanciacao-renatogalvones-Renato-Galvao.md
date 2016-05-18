@@ -97,7 +97,7 @@ var x = function teste(){
 
 ## Closure
 
-"Qualquer função definida dentro de outra função pode acessar os argumento passados e variáveis da função de fora. Este relacionamento é conhecido como closure." - Em tradução livre de um trecho de um post do Ben Alman.
+"Qualquer função definida dentro de outra função pode acessar os argumentos passados e variáveis da função de fora. Este relacionamento é conhecido como closure." - Em tradução livre de um trecho de um post do Ben Alman, que listo nas referências.
 
 Essa frase é tão boa e tão esclarecedora que prefiro ir direto para os exemplos:
 
