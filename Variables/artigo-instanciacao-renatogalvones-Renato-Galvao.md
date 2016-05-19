@@ -9,7 +9,14 @@ E é isso que vamos esclarecer abaixo:
 
 ## Hoisting
 
-Hoisting em inglês significa içar, levantar, puxar pra cima. No JavaScript o que acontece é exatamente isso: um içamento das variáveis e funções para o topo do escopo para que sejam **declaradas** antes de sua utilização **não inicializadas**, ou seja, independente de onde a declaração das variáveis seja feita, elas serão içadas, declaradas e somente então poderão ser inicializadas.
+Antes de mais nada, vamos estabelecer alguns padrões:
+Quando estivermos falando de variáveis, veremos as seguintes palavras:
+- Definição: ato de **criar** a variável e alocar um espaço na memória para a mesma.
+- Inicialização/Atribuição: ato de **atribuir** um valor à variável existente.
+
+Dito isso, vamos lá.
+
+Hoisting em inglês significa içar, levantar, puxar pra cima. No JavaScript o que acontece é exatamente isso: um içamento das variáveis e funções para o topo do escopo para que sejam **definidas** antes de sua utilização porém **não inicializadas**, ou seja, independente de onde a declaração das variáveis seja feita, elas serão içadas, definidas e somente então poderão ser inicializadas.
 
 Encontramos dois tipos de hoisting no JavaScript: de **variáveis** e de **funções**.
 
@@ -20,21 +27,20 @@ As variáveis declaradas dentro do escopo serão içadas até o topo daquele esc
 // Exemplo 1 - Variável não foi definida
 
 try {
-    console.log(x)
+    console.log(x);
 } catch (e) {
-    console.error('A variável x não foi definida.')
+    console.error(e);
 }
-
-// Resultado: Exibe o erro pego no `catch`
+// Resultado: ReferenceError: x não está definido.
 ```
 ```javascript
 // Exemplo 2 - Variável definida porém não inicializada
 
 try {
-    console.log(x)
-    var x = 10
+    console.log(x);
+    var x = 10;
 } catch (e) {
-    console.error('A variável `x` não foi definida.')
+    console.error(e);
 }
 
 // Resultado: Exibe `undefined`
@@ -62,13 +68,13 @@ function teste(){
 // Exemplo 2 - Redefinição de funções
 
 function teste(){
-    function inside(){
+    function interna(){
       return 10;
     }
 
-    return inside();
+    return interna();
 
-    function inside(){
+    function interna(){
       return 20;
     }
 
@@ -85,12 +91,12 @@ antes da execução a de baixo irá sobrescrever a de cima.*/
 x();
 
 var x = function teste(){
-  console.log('o que vai acontecer?')
+  console.log('o que vai acontecer?');
 }
 
 // Nesse exemplo, ainda que o conteúdo da variável seja uma função, será
 // respeitada a regra que se aplica ao hoisting de funções, ou seja, a variável
-// x será criada porém não inicializada, devolvendo um erro de 'not a function'
+// x será definida porém não inicializada, devolvendo um erro de 'not a function'
 ```
 
 ---
@@ -211,7 +217,7 @@ Sendo assim, na segunda passagem, o valor de total não era 10 e sim 7, por isso
 - Executa a função.
 - Descarta a função. A função criada era uma função anônima e depois de sua execução não resta nenhuma referência para a mesma.
 
-Outra vantagem, e que podemos aplicar o *Module Pattern* no nosso código, o que o deixa extremamente elegante.
+Outra vantagem, é que podemos aplicar o *Module Pattern* no nosso código, o que o deixa extremamente elegante.
 
 Antes de falar do código, prestem atenção aos detalhes da IIFE. Ela é uma função declarada via [Function Expression](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/function), e não pelo uso tradicional [Function Statement](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/function). A princípio, o entendimento da IIFE pode ser complicado, mas se atente aos parênteses que tudo fará sentido aos poucos e em caso de dúvida, substitua o conteúdo dos parênteses, deve facilitar seu entendimento.
 
