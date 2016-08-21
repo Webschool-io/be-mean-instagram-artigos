@@ -1,4 +1,4 @@
-# Artigo - Herança
+# Artigo - Instanciação em Javascript
 
 **Autor**: Alex Morgado Pereira - [AlexMCoder](https://github.com/AlexMCoder)
 
@@ -114,5 +114,3 @@ Para escrever IIFE em JavaScript, basta colocar a função dentro dos parêntese
 //código aqui
 }())
 ```
-
-Até.
