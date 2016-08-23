@@ -115,19 +115,19 @@ Outra característica de uma closure é que a variável da função principal co
 
 ```
 1.   var CriacaoDeProdutos = function( ) {
-2.   var cod = 0;
-3.   var criaProduto = function( descr ) {
-4.       cod++;
-5.       return {
-6.           cod: cod,
-7.           descr: descr
-8.       };
-9.   };
-10.  return criaProduto;
+2.       var cod = 0;
+3.       var criaProduto = function( descr ) {
+4.           cod++;
+5.           return {
+6.               cod: cod,
+7.               descr: descr
+8.           };
+9.       };
+10.      return criaProduto;
 11.  };
 12.  var novoProduto = CriacaoDeProdutos();
-13.  var substitutoQueijo = novoUsuario( "Mandiokejo" );
-14.  var proteinaDeVerdade = novoUsuario( "Espirulina" );
+13.  var substitutoQueijo = novoProduto( "Mandiokejo" );
+14.  var proteinaDeVerdade = novoProduto( "Espirulina" );
 15.  alert(substitutoQueijo.cod);    // 1
 16.  alert(proteinaDeVerdade.cod);    // 2
 ```
@@ -195,7 +195,7 @@ Implicitamente, sem o prefixo "var", atribuindo diretamente um valor a variável
 
 ```
 1.  function funcao1(){
-2.		texto = "Variável global";
+2.	texto = "Variável global";
 3.  }
 4.  
 5.  alert(texto); //Será exibido => "Variável Global"
