@@ -64,6 +64,6 @@ local : "GitHub",
 }
 
 // Acessando as propriedades:
-console.log('Nome da Escola: + 'Escola.nome + /n " Local: " + Aula.autor +);
+console.log('Nome da Escola: + 'Escola.nome + /n " Local: " + Aula.local +);
 
 ```
