@@ -1,4 +1,4 @@
-L# Artigo - Herança (Inheritance)
+# Artigo - Herança (Inheritance)
 
 **Autor**: João Paulo S. de Araújo - [ajoao88](https://github.com/ajoao88)  
 **Data**: 1472673592494
