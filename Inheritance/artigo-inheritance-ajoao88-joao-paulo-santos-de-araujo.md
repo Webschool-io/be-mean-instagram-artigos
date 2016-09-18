@@ -98,7 +98,7 @@ A criação de um objeto por uma função construtora usando o `new` também já
 O objeto também poderia ser criado pelos métodos `call` e `apply` da função construtora mas, dessa forma, o protótipo não seria atribuido automaticamente, teria que declarar explicitamente o protótipo do objeto recém criado via propriedade `__proto__` ou via método `Object.setPrototypeOf`.
 
 Fontes:  
-FLANAGAN, D. *Javascript: The Definitive Guide.* 6. ed. : O'Reilly, 2011.  
+FLANAGAN, D. *Javascript: The Definitive Guide.* 6. ed.: O'Reilly, 2011.  
 http://blog.caelum.com.br/reaproveitando-codigo-com-javascript-heranca-e-prototipos/  
 http://blog.caelum.com.br/criacao-de-objetos-em-javascript/  
 https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Inheritance_and_the_prototype_chain  
